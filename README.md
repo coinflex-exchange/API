@@ -1,8 +1,8 @@
 # CoinFLEX Trade Engine APIs
 
-Coinfloor's application programming interfaces (APIs) provide our clients programmatic access to control aspects of their accounts and to place orders on Coinfloor's trading platforms.
+Coinflex's application programming interfaces (APIs) provide our clients programmatic access to control aspects of their accounts and to place orders on Coinflex's trading platforms.
 
-Coinfloor provides several APIs:
+Coinflex provides several APIs:
 
 * our native [WebSocket API][]
 * a [RESTful API](REST.md)
@@ -11,17 +11,17 @@ Coinfloor provides several APIs:
 
 Using these interfaces, it is possible to make both authenticated and unauthenticated API calls.
 
-Access keys are available on the Coinfloor logged-in dashboard page for verified users which, in conjunction with your account password, allow authenticated use these APIs.
+Access keys are available on the Coinflex logged-in dashboard page for verified users which, in conjunction with your account password, allow authenticated use these APIs.
 
 ---
 
 ## General notes
 
-To protect the performance of the system, Coinfloor imposes certain limits on the rates at which you may issue commands to the API. Please see [LIMITS.md](LIMITS.md).
+To protect the performance of the system, Coinflex imposes certain limits on the rates at which you may issue commands to the API. Please see [LIMITS.md](LIMITS.md).
 
 All quantities and prices are transmitted and received as integers with implicit scale factors. For scale information, please see [SCALE.md](SCALE.md).
 
-Coinfloor has published [client libraries][] for several popular languages to aid you in implementing your client application.
+Coinflex has published [client libraries][] for several popular languages to aid you in implementing your client application.
 
 ---
 
@@ -47,5 +47,5 @@ WebSocket connections to the API will time out after 60 seconds of no traffic pa
 [JSON]: https://tools.ietf.org/html/rfc4627 (IETF RFC 4627)
 [WebSocket]: https://tools.ietf.org/html/rfc6455 (IETF RFC 6455)
 [Ping frame]: https://tools.ietf.org/html/rfc6455#section-5.5.2
-[client libraries]: https://github.com/coinfloor/
+[client libraries]: https://github.com/coinflex-exchange/
 
