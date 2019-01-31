@@ -1,8 +1,8 @@
 # CoinFLEX Trade Engine APIs
 
-Coinflex's application programming interfaces (APIs) provide our clients programmatic access to control aspects of their accounts and to place orders on Coinflex's trading platforms.
+CoinFLEX's application programming interfaces (APIs) provide our clients programmatic access to control aspects of their accounts and to place orders on CoinFLEX's trading platforms.
 
-Coinflex provides several APIs:
+CoinFLEX provides several APIs:
 
 * our native [WebSocket API][]
 * a [RESTful API](REST.md)
@@ -11,17 +11,17 @@ Coinflex provides several APIs:
 
 Using these interfaces, it is possible to make both authenticated and unauthenticated API calls.
 
-Access keys are available on the Coinflex logged-in dashboard page for verified users which, in conjunction with your account password, allow authenticated use these APIs.
+Access keys are available on the CoinFLEX logged-in dashboard page for verified users which, in conjunction with your account password, allow authenticated use these APIs.
 
 ---
 
 ## General notes
 
-To protect the performance of the system, Coinflex imposes certain limits on the rates at which you may issue commands to the API. Please see [LIMITS.md](LIMITS.md).
+To protect the performance of the system, CoinFLEX imposes certain limits on the rates at which you may issue commands to the API. Please see [LIMITS.md](LIMITS.md).
 
 All quantities and prices are transmitted and received as integers with implicit scale factors. For scale information, please see [SCALE.md](SCALE.md).
 
-Coinflex has published [client libraries][] for several popular languages to aid you in implementing your client application.
+CoinFLEX has published [client libraries][] for several popular languages to aid you in implementing your client application.
 
 ---
 
