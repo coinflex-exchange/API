@@ -1,4 +1,4 @@
-# Coinflex Authentication Process
+# CoinFLEX Authentication Process
 
 [WebSocket clients](WEBSOCKET-README.md) authenticate by sending an authentication message containing a numeric user identifier, a cookie (described as an API key on the CoinFLEX website), a nonce chosen by the client, and an [ECDSA][] signature. The signature covers the user identifier, a nonce chosen by the server (which is transmitted to the client upon its connecting to the server), and the nonce chosen by the client. The connection is secured using TLS.
 
