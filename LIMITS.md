@@ -6,7 +6,7 @@ CoinFLEX's application programming interface (API) allows our clients to access 
 |:------------------------|---------------------------------:|
 | Open orders             |                   1,000 per user |
 | Authentication attempts |          1,000 per hour per user |
-| Order placements*       | 1,000 per 1,000 seconds per user |
+| Order placements*       |    2,000 per 10 seconds per user |
 | Information requests†   |    10 per 10 seconds per session |
 | Records requests‡       |         10 per 1 minute per user |
 
