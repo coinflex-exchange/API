@@ -1,7 +1,7 @@
 API
 ===
 
-* CoinFLEXEX
+* CoinFLEX
 	* `ws://api.coinfloorex.com/v1`
 	* `wss://api.coinfloorex.com/v1`
 
