@@ -10,12 +10,12 @@ Details of the signature generation procedure are provided in the [CoinFLEX Auth
 
 One challenge that often arises when using external cryptography libraries to generate the digital signature is that the two numeric components of the signature may not be directly exposed by the library's API. Instead, often the library will return a DER-encoded structure containing the signature components. This structure is defined in Appendix C of [SEC 1: Elliptic Curve Cryptography](http://www.secg.org/sec1-v2.pdf) and is reproduced here for convenience:
 
-	ECDSA-Sig-Value ::= SEQUENCE {
-		r INTEGER,
-		s INTEGER,
-		a INTEGER OPTIONAL,
-		y CHOICE { b BOOLEAN, f FieldElement } OPTIONAL
-	}
+        ECDSA-Sig-Value ::= SEQUENCE {
+                r INTEGER,
+                s INTEGER,
+                a INTEGER OPTIONAL,
+                y CHOICE { b BOOLEAN, f FieldElement } OPTIONAL
+        }
 
 In practice, libraries omit the optional fields `a` and `y` and encode only the `r` and `s` integers. These integers are what must be transmitted to CoinFLEX in the `signature` field of the `Authenticate` command message. An algorithm for extracting these integer values from the DER-encoded `ECDSA-Sig-Value` follows:
 
@@ -31,16 +31,16 @@ In practice, libraries omit the optional fields `a` and `y` and encode only the 
 Implementers may wish to maintain a local view of an order book. This can be effected by capturing a snapshot of the live order book and then incrementally applying incoming notices to keep the view current. Maintaining such a view incrementally is vastly more efficient than repeatedly polling the server for the complete order book, and your view is guaranteed to remain perfectly consistent with the live order book on the server if you exactly implement these rules:
 
 * Start by atomically capturing a snapshot of the live order book and subscribing to incremental updates to that book by sending a `WatchOrders` command with `watch` set to **true**.
-	* It is possible that you may begin to receive order update notices before you receive the command reply containing the initial snapshot of the live order book. If this occurs, then you must temporarily store these early notices and apply them to the snapshot once you receive it.
-	* When you receive the reply to your `WatchOrders` command, build your initial view of the order book from the array given in the `orders` field of the reply message, noting that bids are represented with positive quantities and asks with negative quantities. Then apply to this initial view any early update notices that you may have received by following the rules for applying update notices, given below.
-	* Note that the snapshot sent by the server contains at most the top 1000 bids and the top 1000 asks from the live order book at the time when the snapshot was taken.
+        * It is possible that you may begin to receive order update notices before you receive the command reply containing the initial snapshot of the live order book. If this occurs, then you must temporarily store these early notices and apply them to the snapshot once you receive it.
+        * When you receive the reply to your `WatchOrders` command, build your initial view of the order book from the array given in the `orders` field of the reply message, noting that bids are represented with positive quantities and asks with negative quantities. Then apply to this initial view any early update notices that you may have received by following the rules for applying update notices, given below.
+        * Note that the snapshot sent by the server contains at most the top 1000 bids and the top 1000 asks from the live order book at the time when the snapshot was taken.
 * When you receive an `OrderOpened` notice, add the described order to your view, which will not have contained any order with the given ID prior to the addition.
 * When you receive an `OrderClosed` notice, delete the identified order from your view.
-	* If your view did not contain the identified order, then simply ignore the notice, as it pertains to an order that was open at the time of your initial snapshot of the live order book but was not among the top 1000 bids and top 1000 asks at that time.
+        * If your view did not contain the identified order, then simply ignore the notice, as it pertains to an order that was open at the time of your initial snapshot of the live order book but was not among the top 1000 bids and top 1000 asks at that time.
 * When you receive an `OrdersMatched` notice:
-	* If the notice contains a `bid` field, then find in your view the order whose ID is specified in the `bid` field of the notice, and set that order's remaining quantity to the quantity given in the `bid_rem` field of the notice.
-	* If the notice contains an `ask` field, then find in your view the order whose ID is specified in the `ask` field of the notice, and set that order's remaining quantity to the quantity given in the `ask_rem` field of the notice. Note that the quantity given in the `ask_rem` field is always positive, so you would need to store the negative of this value if you are using the sign of the order quantity to indicate the side of the book in your view.
-	* If your view did not contain an order identified by the `bid` or `ask` field of the notice, then you can ignore that side of the trade, as it pertains to an order that was open at the time of your initial snapshot of the live order book but was not among the top 1000 bids and top 1000 asks at that time.
+        * If the notice contains a `bid` field, then find in your view the order whose ID is specified in the `bid` field of the notice, and set that order's remaining quantity to the quantity given in the `bid_rem` field of the notice.
+        * If the notice contains an `ask` field, then find in your view the order whose ID is specified in the `ask` field of the notice, and set that order's remaining quantity to the quantity given in the `ask_rem` field of the notice. Note that the quantity given in the `ask_rem` field is always positive, so you would need to store the negative of this value if you are using the sign of the order quantity to indicate the side of the book in your view.
+        * If your view did not contain an order identified by the `bid` or `ask` field of the notice, then you can ignore that side of the trade, as it pertains to an order that was open at the time of your initial snapshot of the live order book but was not among the top 1000 bids and top 1000 asks at that time.
 
 ## Tracking Fills of Your Orders
 
@@ -48,7 +48,7 @@ When you place an order, you will likely want to know when it fills, at what pri
 
 * If you specify a tonce when you place your order, then you can recognise any notices pertaining to your new order, even before you learn its ID, because the notices will bear the same tonce. Your tonce will appear in the `tonce` field of `OrderOpened` and `OrderClosed` notices and in the `bid_tonce` or `ask_tonce` field of `OrdersMatched` notices.
 * Alternatively, between the time when you transmit your `PlaceOrder` command and the time when you receive the reply to that command, you can temporarily store any notices pertaining to orders that belong to you but whose IDs you do not recognise. You must then process those notices after receiving the reply that contains the ID of your new order.
-	* If you are watching all orders on a book, then you can distinguish notices pertaining to your own orders because they will contain a `tonce` (or `bid_tonce` or `ask_tonce`) field (whose value will be `null` if you did not specify a tonce in your `PlaceOrder` command). These fields will be absent from notices pertaining to orders that belong to other users.
+        * If you are watching all orders on a book, then you can distinguish notices pertaining to your own orders because they will contain a `tonce` (or `bid_tonce` or `ask_tonce`) field (whose value will be `null` if you did not specify a tonce in your `PlaceOrder` command). These fields will be absent from notices pertaining to orders that belong to other users.
 
 ## How Balance Reservations Work
 
@@ -62,11 +62,9 @@ When the trade engine computes a trade total (the amount of the counter asset th
 
 ## How Fees Affect Trade Quantities
 
-At the time of this writing, CoinFLEX charges trading fees only on the counter asset in a trade. On the seller's side the trading fee is taken from the proceeds of the sale, meaning the seller receives slightly less of the counter asset from the sale than the amount of the counter asset that was traded. The situation on the buyer's side is less clear: the buyer receives an amount of the base asset in the trade but must pay the trading fee in the counter asset and may have insufficient available balance in the counter asset to pay the fee. To avoid this scenario, the buyer's trading fee is taken out of the bid order's reservation, leaving a lesser amount of the reservation remaining to be traded. As an example, an order to buy Ƀ1.0000 might end up buying only Ƀ0.9997 because the reserved funds that would have gone to buy the other Ƀ0.0003 were consumed by the trading fee instead.
+At the time of this writing, CoinFLEX charges trading fees only on the counter asset in a trade. On the seller's side the trading fee is taken from the proceeds of the sale, meaning the seller receives slightly less of the counter asset from the sale than the amount of the counter asset that was traded. The situation on the buyer's side is less clear: the buyer receives an amount of the base asset in the trade but must pay the trading fee in the counter asset and may have insufficient available balance in the counter asset to pay the fee. In this scenario, the buyer's trading fee is taken out of the bid order's reservation, leaving a lesser amount of the reservation remaining to be traded. As an example, an order to buy Ƀ1.0000 might end up buying only Ƀ0.9997 because the reserved funds that would have gone to buy the other Ƀ0.0003 were consumed by the trading fee instead. In the usual case, the buyer has sufficient available balance in the counter asset to pay the fee, so no reserved funds are consumed by the fee.
 
-An astute reader may wonder why extra funds are not reserved by the bid order in advance to cover the buyer's trading fee. The reason is that the fee rate that will be effective on the buyer at the time of trading is not known at the time the order is placed, since the buyer's trailing 30-day trade volume may change at any time.
-
-In a partial fill scenario, the quantity remaining in the bid order after the trade will be less than the bid order quantity before the trade minus the traded quantity. This is because the trading fee is taken out of the bid order's reservation, leaving insufficient reserved funds to purchase the full remainder of the bid quantity. Continuing from the example given in the previous section, if the order to buy 12345 units at a price of 1234500 were to match and trade a quantity of 1234 units, then intuitively one would expect that the bid order would have a remaining quantity of 11111 units after the trade. However, one must consider the impact of the trading fee on the bid order's reservation. Initially the bid order had reserved 1523991 units of the counter asset. The trade quantity was 1234 units of the base asset, so the trade total would be 152338 (or 152337, depending on rounding) units of the counter asset. As an example, let's say that the fee rate effective on the buyer at the time of the trade is 0.03%, so the buyer pays 46 (or 45) units of the counter asset as a fee. Both the trade total and the fee come out of the bid order's reservation, leaving a remaining reservation of 1371607. This is insufficient to cover a bid for 11111 units of the base asset at a price of 1234500, which would require a reservation of 1371653 units of the counter asset — a shortfall of 46 units. The remaining reservation is enough to cover a bid for only 11110 units of the base asset, and such a bid would require a reservation of 1371530 units of the counter asset. The difference between this new required reservation and the actual reservation remaining after the trade is 77 units. This amount is immediately returned to the buyer's available balance.
+In a partial fill scenario, the quantity remaining in the bid order after the trade may be slightly less than the bid order quantity before the trade minus the traded quantity. This happens whenever the bid order's remaining balance reservation in the counter asset is not sufficient to purchase the remaining quantity of the base asset. In this case, a small amount of the counter asset may be returned from the balance reservation into the buyer's available balance.
 
 ## Maintaining a Local View of Your Balances
 
@@ -75,11 +73,11 @@ Implementers may wish to maintain a local view of their account balances at all 
 * For each asset in which you have a balance, you will need to keep track of the balance that you most recently observed in a `BalanceChanged` notice and a collection of balance deltas that you anticipate observing in upcoming `BalanceChanged` notices.
 * When you receive a `BalanceChanged` notice, compute its balance _delta_ as the new balance it reports minus the balance you had most recently observed in the same asset. Remove this delta, if it is present, from the collection of balance deltas that you anticipate observing.
 * When you transmit a `PlaceOrder` command, compute the amount of the reservation that it will require, as described in the section above, and add the negative of this amount to the collection of balance deltas that you anticipate observing.
-	* If you later receive an error reply to your `PlaceOrder` command, be certain to remove the delta from the collection.
+        * If you later receive an error reply to your `PlaceOrder` command, be certain to remove the delta from the collection.
 * When you receive an `OrderClosed` notice pertaining to your own order, compute the amount of the reservation that it had been requiring, as described in the section above, and add this amount, if it is non-zero, to the collection of balance deltas that you anticipate observing.
 * When you receive an `OrdersMatched` notice pertaining to your own order:
-	* If your order was a bid, then add the traded quantity to the collection of base-asset balance deltas that you anticipate observing. Compute the return of excess reservation, if any, as described in the section above, and add this amount, if it is non-zero, to the collection of counter-asset balance deltas that you anticipate observing.
-	* If your order was an ask, then add the traded total minus the trading fee to the collection of counter-asset balance deltas that you anticipate observing.
+        * If your order was a bid, then add the traded quantity to the collection of base-asset balance deltas that you anticipate observing. Compute the return of excess reservation, if any, as described in the section above, and add this amount, if it is non-zero, to the collection of counter-asset balance deltas that you anticipate observing.
+        * If your order was an ask, then add the traded total minus the trading fee to the collection of counter-asset balance deltas that you anticipate observing.
 * At any instant between notices, you can assume your usable available balance in any given asset is equal to the balance reported in the most recently delivered `BalanceChanged` notice pertaining to that asset, plus the sum of the deltas in the collection of balance deltas that you anticipate observing in that asset.
 * No balance delta should remain in any collection of anticipated balance deltas for very long. If you see that a balance delta appears to be "stuck" in a collection of anticipated balance deltas, then this means that you have a logic bug.
 
@@ -90,4 +88,3 @@ The above rules imply the following general truths about the delivery order of n
 * `BalanceChanged` notices are always delivered strictly in the order in which the balance changes occurred in the trade engine.
 
 An additional truth that is not implied by the above rules, but is nonetheless true, is that an `OrderOpened` notice always _follows_ the `BalanceChanged` notice that resulted from taking out the reservation that was required to open the order.
-
