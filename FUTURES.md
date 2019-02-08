@@ -1,6 +1,12 @@
 # Futures API Specification
 
-**API endpoint URL: `https://webapi.coinfloorex.com/`**
+DEMO site
+
+**API endpoint URL: `https://demowebapi.coinflex.com/`**
+
+LIVE site
+
+**API endpoint URL: `https://webapi.coinflex.com/`**    (go-live settings - currently turned off)
 
 [scaled]: SCALE.md
 
