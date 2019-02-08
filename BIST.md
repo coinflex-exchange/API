@@ -27,7 +27,11 @@ Bitstamp was not a multi-currency exchange at the time this emulation layer was 
 
 The Bitstamp-like API can be accessed at the following API endpoints:
 
-* `https://webapi.coinfloorex.com/bist/<base>/<counter>/`
+DEMO site
+* `https://demowebapi.coinflex.com/bist/<base>/<counter>/`
+
+LIVE site
+* `https://webapi.coinflex.com/bist/<base>/<counter>/`     (go-live settings - currently turned off)
 
 `<base>` and `<counter>` are placeholders for asset codes listed in the "Asset Type" column of [SCALE.md](SCALE.md).
 
@@ -44,7 +48,11 @@ CoinFLEX's application programming interface (API) allows our clients to access 
 ## PUBLIC DATA FUNCTIONS
 
 #### TICKER
-GET https://webapi.coinfloorex.com/bist/XBT/GBP/ticker/
+DEMO site
+GET https://demowebapi.coinflex.com/bist/XBT/GBP/ticker/
+
+LIVE site
+GET https://webapi.coinflex.com/bist/XBT/GBP/ticker/      (go-live settings - currently turned off)
 
 Returns JSON dictionary:
 
@@ -63,7 +71,11 @@ Returns JSON dictionary:
 2. CoinFLEX returns null for any ticker fields that are not populated, as may happen if no trade has occurred in the past 24 hours.
 
 #### ORDER BOOK
-GET https://webapi.coinfloorex.com/bist/XBT/GBP/order_book/
+DEMO site
+GET https://demowebapi.coinflex.com/bist/XBT/GBP/order_book/
+
+LIVE site
+GET https://webapi.coinflex.com/bist/XBT/GBP/order_book/  (go-live settings - currently turned off)
 
 Returns JSON dictionary with "bids" and "asks". Each is a list of open orders and each order is represented as a list of price and amount.
 
@@ -74,7 +86,11 @@ Returns JSON dictionary with "bids" and "asks". Each is a list of open orders an
 
 
 #### TRANSACTIONS
-GET https://webapi.coinfloorex.com/bist/XBT/GBP/transactions/
+DEMO site
+GET https://demowebapi.coinflex.com/bist/XBT/GBP/transactions/
+
+LIVE site
+GET https://webapi.coinflex.com/bist/XBT/GBP/transactions/  (go-live settings - currently turned off)
 
 Params:
 
@@ -116,7 +132,11 @@ Is the password you use to log into CoinFLEX.
 
 This is an example of how to make a balance request with curl:
 
-> ``curl -k -u '[User ID]/[API key]:[Passphrase]' https://webapi.coinfloorex.com/bist/XBT/GBP/balance/``
+DEMO site
+> ``curl -k -u '[User ID]/[API key]:[Passphrase]' https://demowebapi.coinflex.com/bist/XBT/GBP/balance/``
+
+LIVE site
+> ``curl -k -u '[User ID]/[API key]:[Passphrase]' https://webapi.coinflex.com/bist/XBT/GBP/balance/``  (go-live settings - currently turned off)
 
 * ``User ID`` and ``API key`` are provided on your CoinFLEX logged in Dashboard page.
 * ``Passphrase`` is your CoinFLEX passphrase.
@@ -124,7 +144,11 @@ This is an example of how to make a balance request with curl:
 ## PRIVATE FUNCTIONS
 
 #### ACCOUNT BALANCE
-POST https://webapi.coinfloorex.com/bist/XBT/GBP/balance/
+Demo site
+POST https://demowebapi.coinflex.com/bist/XBT/GBP/balance/
+
+Demo site
+POST https://webapi.coinflex.com/bist/XBT/GBP/balance/  (go-live settings - currently turned off)
 
 Params:
 
@@ -159,7 +183,11 @@ Returns JSON dictionary:
 
 
 #### USER TRANSACTIONS
-POST https://webapi.coinfloorex.com/bist/XBT/GBP/user_transactions/
+DEMO site
+POST https://demowebapi.coinflex.com/bist/XBT/GBP/user_transactions/
+
+LIVE site
+POST https://webapi.coinflex.com/bist/XBT/GBP/user_transactions/   (go-live settings - currently turned off)
 
 Params:
 
@@ -186,7 +214,11 @@ Returns descending JSON list of transactions. Every transaction (dictionary) con
 1. Bitstamp returns the quantity and total of each trade in the btc and usd fields, respectively, and returns the trade price in the (undocumented) btc_usd field. CoinFLEX names these fields using currency codes xbt, eur, gbp, usd, and/or pln, depending on the specific API endpoint being accessed.
 
 #### OPEN ORDERS
-POST https://webapi.coinfloorex.com/bist/XBT/GBP/open_orders/
+DEMO site
+POST https://demowebapi.coinflex.com/bist/XBT/GBP/open_orders/
+
+LIVE site
+POST https://webapi.coinflex.com/bist/XBT/GBP/open_orders/  (go-live settings - currently turned off)
 
 Params:
 
@@ -203,8 +235,11 @@ Returns JSON list of open orders. Each order is represented as dictionary:
 * amount - amount
 
 #### CANCEL ORDER
+DEMO site
+POST https://demowebapi.coinflex.com/bist/XBT/GBP/cancel_order/
 
-POST https://webapi.coinfloorex.com/bist/XBT/GBP/cancel_order/
+LIVE site
+POST https://webapi.coinflex.com/bist/XBT/GBP/cancel_order/ (go-live settings - currently turned off)
 
 Params:
 
@@ -222,8 +257,11 @@ Returns 'true' if order has been found and canceled.
 2. If the specified order was found and canceled, CoinFLEX returns **true** with a Content-Type: text/plain header in this case.
 
 #### BUY LIMIT ORDER
+DEMO site
+POST https://demowebapi.coinflex.com/bist/XBT/GBP/buy/
 
-POST https://webapi.coinfloorex.com/bist/XBT/GBP/buy/
+LIVE site
+POST https://webapi.coinflex.com/bist/XBT/GBP/buy/  (go-live site - currently turned off)
 
 Params:
 
@@ -254,7 +292,11 @@ Returns JSON dictionary representing order:
 3. CoinFLEX returns a datetime field with whole-second precision.
 
 #### SELL LIMIT ORDER
-POST https://webapi.coinfloorex.com/bist/XBT/GBP/sell/
+DEMO site
+POST https://demowebapi.coinflex.com/bist/XBT/GBP/sell/
+
+LIVE site
+POST https://webapi.coinflex.com/bist/XBT/GBP/sell/  (go-live settings - currently turned off)
 
 Params:
 
@@ -285,8 +327,11 @@ Returns JSON dictionary representing order:
 3. CoinFLEX returns a datetime field with whole-second precision.
 
 #### BUY MARKET ORDER
+DEMO site
+POST https://demowebapi.coinflex.com/bist/XBT/GBP/buy_market/
 
-POST https://webapi.coinfloorex.com/bist/XBT/GBP/buy_market/
+LIVE site
+POST https://webapi.coinflex.com/bist/XBT/GBP/buy_market/  (go-live settings - currently turned off)
 
 Params:
 
@@ -299,8 +344,11 @@ Returns JSON dictionary representing order:
 
 
 #### SELL MARKET ORDER 
+DEMO site
+POST https://demowebapi.coinflex.com/bist/XBT/GBP/sell_market/
 
-POST https://webapi.coinfloorex.com/bist/XBT/GBP/sell_market/
+LIVE site
+POST https://webapi.coinflex.com/bist/XBT/GBP/sell_market/ (go-live settings - currently turned off)
 
 Params:
 
@@ -313,8 +361,11 @@ Returns JSON dictionary representing order:
 
 
 #### ESTIMATE BUY MARKET ORDER
+DEMO site
+POST https://demowebapi.coinflex.com/bist/XBT/GBP/estimate_buy_market/
 
-POST https://webapi.coinfloorex.com/bist/XBT/GBP/estimate_buy_market/
+LIVE site
+POST https://webapi.coinflex.com/bist/XBT/GBP/estimate_buy_market/ (go-live site - currently turned off)
 
 Params:
 
@@ -328,8 +379,11 @@ Returns JSON dictionary representing estimate:
 
 
 #### ESTIMATE SELL MARKET ORDER
+DEMO site
+POST https://demowebapi.coinflex.com/bist/XBT/GBP/estimate_sell_market/
 
-POST https://webapi.coinfloorex.com/bist/XBT/GBP/estimate_sell_market/
+LIVE site
+POST https://webapi.coinflex.com/bist/XBT/GBP/estimate_sell_market/  (go-live site - currently turned off)
 
 Params:
 
