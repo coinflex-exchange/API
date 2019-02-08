@@ -1,6 +1,10 @@
 # REST API
 
-* https://webapi.coinfloorex.com/
+DEMo site
+* https://demowebapi.coinflex.com/
+
+LIVE site
+* https://webapi.coinflex.com/  (go-live settings - currently turned off)
 
 For clients who do not wish to take advantage of CoinFLEX's native [WebSocket API][], CoinFLEX offers a RESTful API that implements much of the same functionality.
 
