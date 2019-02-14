@@ -2,11 +2,9 @@ API
 ===
 
 * DEMO site
-	* `ws://demoapi.coinflex.com/v1`
 	* `wss://demoapi.coinflex.com/v1`
 
 * LIVE site  
-	* `ws://api.coinflex.com/v1`      (go-live settings - currntly turned off)
 	* `wss://api.coinflex.com/v1`    (go-live settings - currntly turned off)
 
 CoinFLEX's application programming interface (API) provides our clients programmatic access to control aspects of their accounts and to place orders on the CoinFLEX trading platform. The API is accessible via [WebSocket][IETF RFC 6455] connection to the URIs listed above. Commands, replies, and notifications traverse the WebSocket in text frames with [JSON][IETF RFC 4627]-formatted payloads.
