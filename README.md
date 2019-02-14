@@ -31,12 +31,10 @@ The [WebSocket API][] is accessible via [WebSocket][] connection to the followin
 
 ```text
 DEMO site
-ws://demoapi.coinflex.com/    (unencrypted)
-wss://demoapi.coinflex.com/   (encrypted)
+wss://demoapi.coinflex.com/v1   (encrypted)
 
 LIVE site
-ws://api.coinflex.com/        (unencrypted)    (go-live settings - currently turned-off)
-wss://api.coinflex.com/       (encrypted)      (go-live settings - currently turned-off)
+wss://api.coinflex.com/v1       (encrypted)      (go-live settings - currently turned-off)
 ```
 
 Commands, replies, and notifications traverse the WebSocket in text frames with [JSON][]-formatted payloads.
