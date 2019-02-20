@@ -1,6 +1,6 @@
 # REST API
 
-DEMo site
+DEMO site
 * https://demowebapi.coinflex.com/
 
 LIVE site
