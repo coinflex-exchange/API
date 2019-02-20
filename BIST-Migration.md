@@ -83,7 +83,7 @@ CoinFLEX does not implement this method.
 
 #### Structural differences
 
-* Bitstamp returns fields whose names are constructed by appending `_balance`, `_reserved`, or `_available` to a currency code, which is either `btc` or `usd`. CoinFLEX constructs these field names using currency codes `xbt`, `eur`, `gbp`, `usd`, and/or `pln`, depending on the specific API endpoint being accessed.
+* Bitstamp returns fields whose names are constructed by appending `_balance`, `_reserved`, or `_available` to a currency code, which is `btc` and `usd`. CoinFLEX constructs these field names using currency codes `xbt`, `usdt`, and/or `usdc`, depending on the specific API endpoint being accessed.
 * CoinFLEX does not include the `fee` field in the response.
 
 
@@ -95,7 +95,7 @@ None.
 
 #### Structural differences
 
-* Bitstamp returns the quantity and total of each trade in the `btc` and `usd` fields, respectively, and returns the trade price in the (undocumented) `btc_usd` field. CoinFLEX names these fields using currency codes `xbt`, `eur`, `gbp`, `usd`, and/or `pln`, depending on the specific API endpoint being accessed.
+* Bitstamp returns the quantity and total of each trade in the `btc` and `usd` fields, respectively, and returns the trade price in the (undocumented) `btc_usd` field. CoinFLEX names these fields using currency codes `xbt`, `usdt`, and/or `usdc`, depending on the specific API endpoint being accessed.
 
 
 ### Open Orders
