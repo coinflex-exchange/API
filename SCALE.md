@@ -9,8 +9,8 @@ Asset quantities and totals transmitted via the CoinFLEX API are encoded as inte
 |:----------:|---------:|---------:|-------------:|-------------:|
 |     XBT    |   0xF800 |    63488 |        10000 |     Ƀ 0.0001 |
 |     BCH    |   0xF808 |    63496 |        10000 |    ɃC 0.0001 |
-|     USDC   |   0xFF02 |    65282 |         1000 |      $ 0.001 |
-|     USDT   |   0xFF03 |    65283 |         1000 |      $ 0.001 |
+|     USDC   |   0xFF02 |    65282 |         1000 |     $C 0.001 |
+|     USDT   |   0xFF03 |    65283 |         1000 |     $T 0.001 |
 |  XBTJAN    |   0xC800 |    51200 |        10000 |  JanɃ 0.0001 |
 |  XBTJAN2   |   0xCB20 |    52000 |        10000 | JanɃ2 0.0001 |
 |  USDTJAN   |   0xCAA8 |    51880 |         1000 |  Jan$T 0.001 |
