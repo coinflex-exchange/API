@@ -10,7 +10,6 @@ There will also be a ramp-up period that starts on the week leading up to the fi
 named month.
 
 | Month | 2019 (start)  | 2019 (expiry) |
-|       | (midday UTC)  | (midday UTC)  |
 |------:|--------------:|--------------:|
 |  JAN  | Mon, 26th Nov | Fri, 25th Jan |
 |  FEB  | Mon, 31st Dec | Fri, 22nd Feb |
