@@ -1,11 +1,11 @@
 # Event Stream
 
 DEMO site
-* https://demowebapi.coinfloorex.com/event-stream
+* https://demowebapi.coinflex.com/event-stream
 	* Version 1
 
 LIVE site
-* https://webapi.coinfloorex.com/event-stream  (go-live settings - currently turned off)
+* https://webapi.coinflex.com/event-stream  (go-live settings - currently turned off)
 	* Version 1
 
 CoinFLEX offers an Event Stream resource that complies with the [Server-Sent Events] specification by the W3C. This resource delivers a continuous, consistent stream of events related to market and account activity on the CoinFLEX platform. It is offered as a simpler alternative to CoinFLEX's [WebSocket API] for clients that do not require bidirectional communication with the platform.
