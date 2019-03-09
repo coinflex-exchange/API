@@ -15,7 +15,7 @@ All quantities and prices are transmitted and received as integers with implicit
 
 CoinFLEX has published [client libraries](https://github.com/coinflex-exchange) for several popular languages to aid you in implementing your client application.
 
-**Note:** Throughout this documentation, *"iff"* means "[if and only if](https://en.wikipedia.org/wiki/If_and_only_if)" â€” the biconditional logical connective.
+**Note:** Throughout this documentation, *"iff"* means "[if and only if](https://en.wikipedia.org/wiki/If_and_only_if)" - the biconditional logical connective.
 
 [IETF RFC 4627]: https://tools.ietf.org/html/rfc4627
 [IETF RFC 6455]: https://tools.ietf.org/html/rfc6455
