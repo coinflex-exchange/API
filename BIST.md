@@ -5,7 +5,6 @@
 - [Public Data Functions](#public-data-functions)
   - [Ticker](#ticker)
   - [Order Book](#order-book)
-  - [Transactions](#transactions)
 - [API Authentication](#api-authentication)
 - [Private Functions](#private-functions)
   - [Account Balance](#account-balance)
@@ -89,31 +88,6 @@ Returns JSON dictionary with "bids" and "asks". Each is a list of open orders an
 
 
 1. Please refer to the Date HTTP response header for any date or time information you may require.
-
-
-#### TRANSACTIONS
-DEMO site
-
-GET https://demowebapi.coinflex.com/bist/XBT/USDT/transactions/
-
-LIVE site
-
-GET https://webapi.coinflex.com/bist/XBT/USDT/transactions/  (go-live settings - currently turned off)
-
-Params:
-
-* time - time frame for transaction export ("minute" - 1 minute, "hour" - 1 hour). Default: hour.
-
-Returns descending JSON list of transactions. Every transaction (dictionary) contains:
-
-* date - unix timestamp date and time
-* tid - transaction id
-* price - BTC price
-* amount - BTC amount
-
-**N.B:**
-
-1. CoinFLEX encodes the date field as an integer.
 
 
 ## API AUTHENTICATION
