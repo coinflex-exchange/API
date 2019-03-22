@@ -1,3 +1,3 @@
 # CoinFLEX BIST API
 
-BIST is no longer supperted by CoinFLEX.
+BIST is no longer supported by CoinFLEX.
