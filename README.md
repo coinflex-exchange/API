@@ -7,7 +7,6 @@ CoinFLEX provides several APIs:
 * our native [WebSocket API][]
 * a [RESTful API](REST.md)
 * an [Event Stream resource](EventStream.md)
-* a [Bitstamp Emulation API](BIST.md) (not recommended for new projects)
 
 Using these interfaces, it is possible to make both authenticated and unauthenticated API calls.
 
