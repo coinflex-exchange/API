@@ -49,6 +49,8 @@ When you place an order, you will likely want to know when it fills, at what pri
 * If you specify a tonce when you place your order, then you can recognise any notices pertaining to your new order, even before you learn its ID, because the notices will bear the same tonce. Your tonce will appear in the `tonce` field of `OrderOpened` and `OrderClosed` notices and in the `bid_tonce` or `ask_tonce` field of `OrdersMatched` notices.
 * Alternatively, between the time when you transmit your `PlaceOrder` command and the time when you receive the reply to that command, you can temporarily store any notices pertaining to orders that belong to you but whose IDs you do not recognise. You must then process those notices after receiving the reply that contains the ID of your new order.
         * If you are watching all orders on a book, then you can distinguish notices pertaining to your own orders because they will contain a `tonce` (or `bid_tonce` or `ask_tonce`) field (whose value will be `null` if you did not specify a tonce in your `PlaceOrder` command). These fields will be absent from notices pertaining to orders that belong to other users.
+        
+Note that it is possible to place an order that matches against one of your own open orders. In this case the emitted `OrdersMatched` notice will contain both `bid_tonce` and `ask_tonce` fields, indicating that both orders belonged to you. Such "self-trades" are never assessed any trade fees, and they do not contribute to trade volumes.
 
 ## How Balance Reservations Work
 
