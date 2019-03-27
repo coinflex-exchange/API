@@ -137,7 +137,7 @@ Note that bid prices are always rounded down and ask prices are always rounded u
 
 |          Order placed            |          Order Opened           |
 |---------------------------------:|--------------------------------:|
-| Sell 0.0001 XBT @ 4000.0001 USDT |   Sell 0.0001 XBT @ 4001 USDT   |
+| Sell 0.0001 XBT @ 4000.0001 USDT |   Sell 0.0001 XBT @ 4001 USDT   
 |      Qty:-1, Price:40000001      |      Qty:-1, Price:40010000     |
 
 | Buy  1.1234 XBT @ 3999.9999 USDT |   Buy  1.1234 XBT @ 3999 USDT   |
