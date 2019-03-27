@@ -82,7 +82,7 @@ Prices transmitted via the CoinFLEX API are encoded as integers with an implicit
 |  XBTAUG:USDTAUG   |        10000 |
 |  USDTAUG:USDCAUG  |        10000 |
 |  XBTSEP:USDTSEP   |        10000 |
-|  USDTSEP:USDCSEP .|        10000 |
+|  USDTSEP:USDCSEP  |        10000 |
 |  XBTOCT:USDTOCT   |        10000 |
 |  USDTOCT:USDCOCT  |        10000 |
 |  XBTNOV:USDTNOV   |        10000 |
@@ -125,7 +125,7 @@ Note that bid prices are always rounded down and ask prices are always rounded u
 |  XBTAUG:USDTAUG   |            1 |
 |  USDTAUG:USDCAUG  |        0.001 |
 |  XBTSEP:USDTSEP   |            1 |
-|  USDTSEP:USDCSEP .|        0.001 |
+|  USDTSEP:USDCSEP  |        0.001 |
 |  XBTOCT:USDTOCT   |            1 |
 |  USDTOCT:USDCOCT  |        0.001 |
 |  XBTNOV:USDTNOV   |            1 |
