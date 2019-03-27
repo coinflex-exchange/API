@@ -100,7 +100,7 @@ Prices transmitted via the CoinFLEX API are encoded as integers with an implicit
 
 ## Tick Size
 
-The Tick Sizes applied per asset pair are as follows. 
+The Tick Size applied per asset pair as follows. 
 
 Note that bid prices are always rounded down and ask prices are always rounded up so as to ensure that a user never gets a less favourable price on their order than they requested.
 
