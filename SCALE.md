@@ -147,7 +147,7 @@ Note that bid prices are always rounded down and ask prices are always rounded u
 
 |          Order Placed            |          Order Opened           |
 |---------------------------------:|--------------------------------:|
-|  Sell 1.0001 USDC @ 1.0001 USDT  |  Sell 1.0001 XBT @ 1.001 USDT   |
+|  Sell 1.0001 USDC @ 1.0001 USDT  |  Sell 1.0001 USDC @ 1.001 USDT  |
 |     Qty:-10001, Price:10001      |     Qty:-10001, Price:10010     |
 
 |          Order Placed            |          Order Opened           |
