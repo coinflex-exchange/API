@@ -52,7 +52,7 @@ Asset quantities and totals transmitted via the CoinFLEX API are encoded as inte
 | Logical Amount | Integer Encoding |
 |---------------:|-----------------:|
 |       Ƀ12.3456 |           123456 |
-|     $T987.6541 |          9876541 |
+|        $T1.654 |            16540 |
 |           Ƀ1.5 |            15000 |
 |           $C20 |           200000 |
 
