@@ -94,8 +94,8 @@ Prices transmitted via the CoinFLEX API are encoded as integers with an implicit
 
 | Logical Price | Integer Encoding |
 |--------------:|-----------------:|
-|$T4443.211/XBT |         44432110 |
-|      $T1/USDC |            10000 |
+|    $T4443/XBT |         44430000 |
+|  $T1.011/USDC |            10110 |
 
 
 ## Tick Size
