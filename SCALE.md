@@ -66,29 +66,29 @@ Prices transmitted via the CoinFLEX API are encoded as integers with an implicit
 |      XBT:USDT     |        10000 |
 |      USDC:USDT    |        10000 |
 |   XBTJAN:USDTJAN  |        10000 |
-|   USDTJAN:USDCJAN |        10000 |
+|   USDCJAN:USDTJAN |        10000 |
 |   XBTFEB:USDTFEB  |        10000 |
-|  USDTFEB:USDCFEB  |        10000 |
+|  USDCFEB:USDTFEB  |        10000 |
 |   XBTMAR:USDTMAR  |        10000 |
-|  USDTMAR:USDCMAR  |        10000 |
+|  USDCMAR:USDTMAR  |        10000 |
 |  XBTAPR:USDTAPR   |        10000 |
-|  USDTAPR:USDCAPR  |        10000 |
+|  USDCAPR:USDTAPR  |        10000 |
 |  XBTMAY:USDTMAY   |        10000 |
-|  USDTMAY:USDCMAY  |        10000 |
+|  USDCMAY:USDTMAY  |        10000 |
 |  XBTJUN:USDTJUN   |        10000 |
-|  USDTJUN:USDCJUN  |        10000 |
+|  USDCJUN:USDTJUN  |        10000 |
 |  XBTJUL:USDTJUL   |        10000 |
-|  USDTJUL:USDCJUL  |        10000 |
+|  USDCJUL:USDTJUL  |        10000 |
 |  XBTAUG:USDTAUG   |        10000 |
-|  USDTAUG:USDCAUG  |        10000 |
+|  USDCAUG:USDTAUG  |        10000 |
 |  XBTSEP:USDTSEP   |        10000 |
-|  USDTSEP:USDCSEP  |        10000 |
+|  USDCSEP:USDTSEP  |        10000 |
 |  XBTOCT:USDTOCT   |        10000 |
-|  USDTOCT:USDCOCT  |        10000 |
+|  USDCOCT:USDTOCT  |        10000 |
 |  XBTNOV:USDTNOV   |        10000 |
-|  USDTNOV:USDCNOV  |        10000 |
+|  USDCNOV:USDTNOV  |        10000 |
 |  XBTDEC:USDTDEC   |        10000 |
-|  USDTDEC:USDCDEC  |        10000 |
+|  USDCDEC:USDTDEC  |        10000 |
 
 ### Examples
 
