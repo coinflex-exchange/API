@@ -9,7 +9,7 @@ API
 
 CoinFLEX's application programming interface (API) provides our clients programmatic access to control aspects of their accounts and to place orders on the CoinFLEX trading platform. The API is accessible via [WebSocket][IETF RFC 6455] connection to the URIs listed above. Commands, replies, and notifications traverse the WebSocket in text frames with [JSON][IETF RFC 4627]-formatted payloads.
 
-WebSocket connections to the API will time out after 60 seconds of no traffic passing in either direction. To prevent timeouts, send a [Ping frame](https://tools.ietf.org/html/rfc6455#section-5.5.2) approximately every 45 seconds while the connection is otherwise idle. You do not need to send Ping frames if you are otherwise sending or receiving data frames on the socket.
+WebSocket connections to the API will time out after 60 seconds if no traffic passing in either direction. To prevent timeouts, send a [Ping frame](https://tools.ietf.org/html/rfc6455#section-5.5.2) approximately every 45 seconds while the connection is otherwise idle. You do not need to send Ping frames if you are otherwise sending or receiving data frames on the socket.
 
 To protect the performance of the system, CoinFLEX imposes certain limits on the rates at which you may issue commands to the API. Please see [LIMITS.md](LIMITS.md).
 
