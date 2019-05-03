@@ -33,7 +33,7 @@ DEMO site
 wss://demoapi.coinflex.com/v1   (encrypted)
 
 LIVE site
-wss://api.coinflex.com/v1       (encrypted)      (go-live settings - currently turned-off)
+wss://api.coinflex.com/v1       (encrypted)
 ```
 
 Commands, replies, and notifications traverse the WebSocket in text frames with [JSON][]-formatted payloads.
