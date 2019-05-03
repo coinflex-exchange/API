@@ -6,7 +6,7 @@ DEMO site
 
 LIVE site
 
-**API endpoint URL: `https://webapi.coinflex.com/`**    (go-live settings - currently turned off)
+**API endpoint URL: `https://webapi.coinflex.com/`**
 
 [scaled]: SCALE.md
 
