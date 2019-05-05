@@ -6,7 +6,7 @@
 Futures contracts will run for 2 months and end at midday (UTC) on the final Friday of the named month.
 The start will always be at midday (UTC) on the Monday following the final Friday of the month (2 months
 before expiry).
-There will also be a ramp-up period that starts on the week leading up to the final Friday of the
+There will also be a ramp-up period that starts on Wednesday at midday (UTC) leading up to the final Friday of the
 named month.
 
 | Month | 2019 (start)  | 2019 (expiry) | code |
