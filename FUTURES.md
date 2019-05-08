@@ -381,3 +381,25 @@ Fully repays an outstanding loan.
 		Content-Type: text/plain; charset=US-ASCII
 		
 		<explanation>
+
+
+---
+
+## `GET /borrower/margin_ratios/`
+
+Returns the margin ratio of the user for all assets where leverage funding has been taken out.  However it is recommended that users should connect to the Event Stream resource at /borrower/events and perform the necessary calculations on the data provided therein.
+
+
+### Request
+
+	GET /borrower/margin_ratios/ HTTP/1.1
+
+* **`asset_id`:** *(integer)* The numeric asset code of an asset in which the user's margin ratio is reported.
+* **`collateral`:** *(integer)* The scaled amount of the user's available collateral in the asset.
+* **`loan`:** *(integer)* The scaled amount of the asset borrowed.
+* **`ratio`:** *(float)* The margin ratio of the asset.
+
+### Response
+
+	HTTP/1.1 204 No Content
+
