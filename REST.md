@@ -96,6 +96,31 @@ The public market data methods do not require authentication.
 
 ---
 
+## `GET /positions/`
+
+Authentication required. Returns the user's traded net position in all assets.
+
+### Request
+
+	GET /positions/ HTTP/1.1
+
+* **`asset`:** *(integer)* The numeric asset code of an asset in which the user's traded net position is reported.
+* **`position`:** *(integer)* The scaled amount of the traded net position in the asset.
+* **`through`:** *(integer)* The micro-timestamp of the last net position change for the identified asset.
+
+### Response
+
+	HTTP/1.1 200 OK
+	Content-Type: application/json; charset=US-ASCII
+	
+	{
+		"asset": <integer>,
+		"position": <integer>,
+		"through": <integer>
+	}
+
+---
+
 ## `GET /tickers/`
 
 **Authentication not required.**
