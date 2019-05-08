@@ -98,7 +98,8 @@ The public market data methods do not require authentication.
 
 ## `GET /positions/`
 
-Authentication required. Returns the user's traded net position in all assets.
+**Authentication required.** 
+Returns the user's traded net position in all assets.
 
 ### Request
 
