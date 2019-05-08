@@ -401,5 +401,12 @@ Returns the margin ratio of the user for all assets where leverage funding has b
 
 ### Response
 
-	HTTP/1.1 204 No Content
-
+	HTTP/1.1 200 OK
+	Content-Type: application/json; charset=US-ASCII
+	
+	{
+		"asset_id": <integer>,
+		"collateral": <integer>,
+		"loan": <integer>,
+		"ratio": <float>
+	}
