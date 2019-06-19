@@ -25,10 +25,12 @@ All method calls require [HTTP Basic authentication][]. The username portion of 
 	{
 		"asset_id": <integer>,
 		"available": <integer>
+		"total": <integer>
 	}
 
 * **`asset_id`:** *(integer)* The numeric asset code of an asset in which the user's available collateral is reported.
 * **`available`:** *(integer)* The [scaled][] amount of the user's available collateral in the identified asset.
+* **`total`:** *(integer)* The [scaled][] amount of the user's equivalent account values in each asset that would remain if all of the user's outstanding loans were to be repaid (i.e. the users underlying collateral value measured in each asset).  The conceptual difference between this “total” figure and the “available” is that available collateral excludes funds needed for maintaining margin requirements, whereas total collateral represents a hypothetical scenario in which all loans are repaid and thus incurs no margin requirements.
 
 ### `<offer>`
 
