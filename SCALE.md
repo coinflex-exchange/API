@@ -12,6 +12,7 @@ Asset quantities and totals transmitted via the CoinFLEX API are encoded as inte
 |     ETH    |   0xF820 |    63520 |        10000 |     Ξ 0.0001 |
 |     USDC   |   0xFF02 |    65282 |        10000 |    $C 0.0001 |
 |     USDT   |   0xFF03 |    65283 |        10000 |    $T 0.0001 |
+|     FLEX   |   0xFF05 |    65285 |        10000 |    FL 0.0001 |
 |  XBTJAN    |   0xC800 |    51200 |        10000 |  JanɃ 0.0001 |
 |  BCHJAN    |   0xC814 |    51220 |        10000 | JanɃC 0.0001 |
 |  ETHJAN    |   0xC828 |    51240 |        10000 |  JanΞ 0.0001 |
@@ -93,6 +94,7 @@ Prices transmitted via the CoinFLEX API are encoded as integers with an implicit
 |      BCH:USDT     |        10000 |
 |      ETH:USDT     |        10000 |
 |      USDC:USDT    |        10000 |
+|      FLEX:USDT    |        10000 |
 |   XBTJAN:USDTJAN  |        10000 |
 |   BCHJAN:USDTJAN  |        10000 |
 |   ETHJAN:USDTJAN  |        10000 |
@@ -162,6 +164,7 @@ Note that bid prices are always rounded down and ask prices are always rounded u
 |      BCH:USDT     |         0.25 |
 |      ETH:USDT     |          0.1 |
 |      USDC:USDT    |        0.001 |
+|      FLEX:USDT    |        0.005 |
 |   XBTJAN:USDTJAN  |            1 |
 |   BCHJAN:USDTJAN  |         0.25 |
 |   ETHJAN:USDTJAN  |          0.1 |
@@ -222,6 +225,11 @@ Note that bid prices are always rounded down and ask prices are always rounded u
 |---------------------------------:|--------------------------------:|
 | Buy 0.001 ETH @ 160.19 USDT      |    Buy 0.001 ETH @ 160.1 USDT   |
 |      Qty:10, Price:1601900       |      Qty:10, Price:1601000      |
+
+|          Order Placed            |          Order Opened           |
+|---------------------------------:|--------------------------------:|
+| Buy 1.5 FLEX @ 10.206 USDT       |    Buy 1.5 FLEX @ 10.205 USDT   |
+|      Qty:15000, Price:102060     |      Qty:15000, Price:102050    |
 
 |          Order Placed            |          Order Opened           |
 |---------------------------------:|--------------------------------:|
