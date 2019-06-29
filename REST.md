@@ -96,6 +96,67 @@ The public market data methods do not require authentication.
 
 ---
 
+## `GET /assets/`
+
+**Authentication required.** 
+Returns a complete list of CoinFLEX assets.
+
+### Request
+
+	GET /assets/ HTTP/1.1
+
+* **`id`:** *(integer)* The numeric identifier of the asset.
+* **`spot`:** *(integer)* The numeric identifier of the underlying spot asset for a futures asset.  Only applicable for futures assets.
+* **`name`:** *(string)* The string name of the asset.
+* **`scale`:** *(integer)* The scale factor for the asset, applicable to all asset quantities and totals transmitted via the CoinFLEX API.
+
+### Response
+
+	HTTP/1.1 200 OK
+	Content-Type: application/json; charset=US-ASCII
+	
+	{
+		"id": <integer>,
+		"spot": <integer>,
+		"asset": <integer>,
+		"name": <string>,
+		"scale": <integer>
+	}
+
+---
+
+## `GET /markets/`
+
+**Authentication required.** 
+Returns a complete list of CoinFLEX SPOT and Futures markets.
+
+### Request
+
+	GET /markets/ HTTP/1.1
+
+* **`base`:** *(integer)* The numeric identifier attributed to the base asset of the market.
+* **`counter`:** *(integer)* The numeric identifier attributed to the counter asset of the market.
+* **`start`:** *(integer)* The UNIX epoch millisecond timestamp of the first trade date of the market.  Only applicable for futures markets.
+* **`expires`:** *(integer)* The UNIX epoch millisecond timestamp of the expiry date of the market.  Only applicable for futures markets.
+* **`tenor`:** *(integer)* The tenor code of the market using industry standard codes.
+* **`tick`:** *(integer)* The scaled tick size of the market.
+
+### Response
+
+	HTTP/1.1 200 OK
+	Content-Type: application/json; charset=US-ASCII
+	
+	{
+		"base": <integer>,
+		"counter": <integer>,
+		"start": <integer>,
+		"expires": <integer>,
+		"tenor": <integer>,
+		"tick": <integer>
+	}
+
+---
+
 ## `GET /positions/`
 
 **Authentication required.** 
