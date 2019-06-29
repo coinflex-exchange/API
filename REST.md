@@ -138,7 +138,7 @@ Returns a complete list of CoinFLEX SPOT and Futures markets.
 * **`counter`:** *(integer)* The numeric identifier attributed to the counter asset of the market.
 * **`start`:** *(integer)* The UNIX epoch millisecond timestamp of the first trade date of the market.  Only applicable for futures markets.
 * **`expires`:** *(integer)* The UNIX epoch millisecond timestamp of the expiry date of the market.  Only applicable for futures markets.
-* **`tenor`:** *(integer)* The tenor code of the market using industry standard codes.
+* **`tenor`:** *(string)* The tenor code of the market using industry standard codes.
 * **`tick`:** *(integer)* The scaled tick size of the market.
 
 ### Response
@@ -151,7 +151,7 @@ Returns a complete list of CoinFLEX SPOT and Futures markets.
 		"counter": <integer>,
 		"start": <integer>,
 		"expires": <integer>,
-		"tenor": <integer>,
+		"tenor": <string>,
 		"tick": <integer>
 	}
 
