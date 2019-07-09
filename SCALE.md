@@ -13,6 +13,8 @@ Asset quantities and totals transmitted via the CoinFLEX API are encoded as inte
 |     USDC   |   0xFF02 |    65282 |        10000 |    $C 0.0001 |
 |     USDT   |   0xFF03 |    65283 |        10000 |    $T 0.0001 |
 |     FLEX   |   0xFF05 |    65285 |        10000 |    FL 0.0001 |
+|    DOTF    |   0xFF07 |    65287 |        10000 |   DTF 0.0001 |
+|   USDTDOT  |   0xFF08 |    65288 |        10000 |  $TDT 0.0001 |
 |  XBTJAN    |   0xC800 |    51200 |        10000 |  JanɃ 0.0001 |
 |  BCHJAN    |   0xC814 |    51220 |        10000 | JanɃC 0.0001 |
 |  ETHJAN    |   0xC828 |    51240 |        10000 |  JanΞ 0.0001 |
@@ -95,6 +97,7 @@ Prices transmitted via the CoinFLEX API are encoded as integers with an implicit
 |      ETH:USDT     |        10000 |
 |      USDC:USDT    |        10000 |
 |      FLEX:USDT    |        10000 |
+|    DOTF:USDTDOT   |        10000 |
 |   XBTJAN:USDTJAN  |        10000 |
 |   BCHJAN:USDTJAN  |        10000 |
 |   ETHJAN:USDTJAN  |        10000 |
@@ -165,6 +168,7 @@ Note that bid prices are always rounded down and ask prices are always rounded u
 |      ETH:USDT     |          0.1 |
 |      USDC:USDT    |        0.001 |
 |      FLEX:USDT    |        0.005 |
+|    DOTF:USDTDOT   |            2 |
 |   XBTJAN:USDTJAN  |            1 |
 |   BCHJAN:USDTJAN  |         0.25 |
 |   ETHJAN:USDTJAN  |          0.1 |
@@ -230,6 +234,11 @@ Note that bid prices are always rounded down and ask prices are always rounded u
 |---------------------------------:|--------------------------------:|
 | Buy 1.5 FLEX @ 10.206 USDT       |    Buy 1.5 FLEX @ 10.205 USDT   |
 |      Qty:15000, Price:102060     |      Qty:15000, Price:102050    |
+
+|          Order Placed            |          Order Opened           |
+|---------------------------------:|--------------------------------:|
+| Buy 3.2 DOTF @ 1003.3 USDTDOT    |    Buy 3.2 FLEX @ 1002 USDTDOT  |
+|      Qty:32000, Price:10023000   |      Qty:32000, Price:10020000  |
 
 |          Order Placed            |          Order Opened           |
 |---------------------------------:|--------------------------------:|
