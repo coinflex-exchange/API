@@ -237,7 +237,7 @@ Note that bid prices are always rounded down and ask prices are always rounded u
 
 |          Order Placed            |          Order Opened           |
 |---------------------------------:|--------------------------------:|
-| Buy 3.2 DOTF @ 1003.3 USDTDOT    |    Buy 3.2 FLEX @ 1002 USDTDOT  |
+| Buy 3.2 DOTF @ 1003.3 USDTDOT    |    Buy 3.2 DOTF @ 1002 USDTDOT  |
 |      Qty:32000, Price:10023000   |      Qty:32000, Price:10020000  |
 
 |          Order Placed            |          Order Opened           |
