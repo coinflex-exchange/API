@@ -98,7 +98,7 @@ The public market data methods do not require authentication.
 
 ## `GET /assets/`
 
-**Authentication required.** 
+**Authentication not required.** 
 Returns a complete list of CoinFLEX assets.
 
 ### Request
@@ -127,7 +127,7 @@ Returns a complete list of CoinFLEX assets.
 
 ## `GET /markets/`
 
-**Authentication required.** 
+**Authentication not required.** 
 Returns a complete list of CoinFLEX SPOT and Futures markets.
 
 ### Request
