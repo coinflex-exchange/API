@@ -175,11 +175,11 @@ Returns the user's traded net position in all assets.
 	HTTP/1.1 200 OK
 	Content-Type: application/json; charset=US-ASCII
 	
-	{
+	[{
 		"asset": <integer>,
 		"position": <integer>,
 		"through": <integer>
-	}
+	}, …]
 
 ---
 
