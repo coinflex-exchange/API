@@ -118,7 +118,6 @@ Returns a complete list of CoinFLEX assets.
 	{
 		"id": <integer>,
 		"spot": <integer>,
-		"asset": <integer>,
 		"name": <string>,
 		"scale": <integer>
 	}
