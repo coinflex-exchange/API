@@ -2,7 +2,7 @@
 
 DEMO site
 
-**API endpoint URL: `https://demowebapi.coinflex.com/`**
+**API endpoint URL: `https://stgwebapi.coinflex.com/`**
 
 LIVE site
 

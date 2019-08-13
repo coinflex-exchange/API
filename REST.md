@@ -1,7 +1,7 @@
 # REST API
 
 DEMO site
-* https://demowebapi.coinflex.com/
+* https://stgwebapi.coinflex.com/
 
 LIVE site
 * https://webapi.coinflex.com/
