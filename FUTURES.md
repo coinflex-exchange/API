@@ -96,6 +96,78 @@ All method calls require [HTTP Basic authentication][]. The username portion of 
 
 ---
 
+## `GET /borrower/conversion/`
+
+Returns the list of asset pairs available for conversion.
+
+### Request
+
+	GET /borrower/conversion/ HTTP/1.1
+
+### Response
+
+	HTTP/1.1 200 OK
+	Content-Type: application/json; charset=US-ASCII
+	
+	[
+		{
+			"asset_from": <integer>,
+			"asset_to": <integer>
+		},
+		…
+	]
+
+* **`asset_from`:** *(integer)* The numeric code of the asset to convert from.
+* **`asset_to`:** *(integer)* The numeric code of the asset to convert to.
+
+---
+
+## `POST /borrower/conversion/`
+
+Initiates a loan.
+
+### Request
+
+	POST /borrower/conversion/ HTTP/1.1
+	Content-Type: application/x-www-form-urlencoded
+	
+	asset_from=<integer>&asset_to=<integer>&amount=<integer>
+
+* **`asset_from`:** *(integer)* .
+* **`asset_to`:** *(integer)* .
+* **`amount`:** *(integer)* The [scaled][] amount of the asset to convert from.
+
+### Response
+
+	HTTP/1.1 201 Created
+	Content-Type: application/json; charset=US-ASCII
+	
+	{
+		"asset_from": <integer>,
+		"asset_to": <integer>,
+		"amount": <integer>
+	}
+
+The `Location` response header contains the numeric identifier of the newly initiated loan.
+
+### Errors
+
+* If the asset code specified in **`asset_from`** or **`asset_to`** was not found:
+
+		HTTP/1.1 404 Not Found
+		Content-Length: 0
+		
+		<explanation>
+
+* If the request is invalid (e.g. missing attributes, not enough balance) this method returns:
+
+		HTTP/1.1 400 Bad Request
+		Content-Type: text/plain; charset=US-ASCII
+		
+		<explanation>
+
+---
+
 ## `GET /borrower/events`
 
 Returns a stream of events pertaining to the user's borrowing activity.
