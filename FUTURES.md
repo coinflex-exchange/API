@@ -10,6 +10,21 @@ LIVE site
 
 [scaled]: SCALE.md
 
+## Contents
+
+Currently, the Futures API supports the following endpoints:
+
+`/borrower/collateral/`     &#09; ([GET](#get-borrowercollateral))   
+`/borrower/collateral/<id>` &#09; ([GET](#get-borrowercollateralid))   
+`/borrower/conversion/`     &#09; ([GET](#get-borrowerconversion) | [POST](#post-borrowerconversion))   
+`/borrower/events`          &#09; ([GET](#get-borrowerevents))   
+`/borrower/offers/`         &#09; ([GET](#get-borroweroffers))   
+`/borrower/offers/<id>`     &#09; ([GET](#get-borroweroffersid))   
+`/borrower/loans/`          &#09; ([GET](#get-borrowerloans) | [POST](#post-borrowerloans))   
+`/borrower/loans/<id>`      &#09; ([GET](#get-borrowerloansid) | [POST](#post-borrowerloansid) | [DELETE](#delete-borrowerloansid))   
+`/borrower/margin_ratios/`  &#09; ([GET](#get-borrowermargin_ratios)  
+
+
 ## Authentication
 
 All method calls require [HTTP Basic authentication][]. The username portion of the Basic credentials is constructed by concatenating the numeric user ID, a slash, and the user's API authentication cookie. The password portion is simply the user's login passphrase.
