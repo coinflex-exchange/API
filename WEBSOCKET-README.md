@@ -126,7 +126,7 @@ Retrieves the available balances of the authenticated user.
 				"asset": <integer>,
 				"balance": <integer>
 			},
-			â‹®
+			…
 		]
 	}
 ```
@@ -190,7 +190,7 @@ Retrieves the open orders of the authenticated user.
 				"price": <integer>,
 				"time": <integer>
 			},
-			â‹®
+			…
 		]
 	}
 ```
