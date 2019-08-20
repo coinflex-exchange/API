@@ -15,6 +15,8 @@ Asset quantities and totals transmitted via the CoinFLEX API are encoded as inte
 |     FLEX   |   0xFF05 |    65285 |        10000 |    FL 0.0001 |
 |    DOTF    |   0xFF07 |    65287 |        10000 |   DTF 0.0001 |
 |   USDTDOT  |   0xFF08 |    65288 |        10000 |  $TDT 0.0001 |
+|    DFNF    |   0xFF0A |    65290 |        10000 |   DFF 0.0001 |
+|   USDTDFN  |   0xFF0B |    65291 |        10000 |  $TDF 0.0001 |
 |  XBTJAN    |   0xC800 |    51200 |        10000 |  JanɃ 0.0001 |
 |  BCHJAN    |   0xC814 |    51220 |        10000 | JanɃC 0.0001 |
 |  ETHJAN    |   0xC828 |    51240 |        10000 |  JanΞ 0.0001 |
@@ -98,6 +100,7 @@ Prices transmitted via the CoinFLEX API are encoded as integers with an implicit
 |      USDC:USDT    |        10000 |
 |      FLEX:USDT    |        10000 |
 |    DOTF:USDTDOT   |        10000 |
+|    DFNF:USDTDFN   |        10000 |
 |   XBTJAN:USDTJAN  |        10000 |
 |   BCHJAN:USDTJAN  |        10000 |
 |   ETHJAN:USDTJAN  |        10000 |
@@ -169,6 +172,7 @@ Note that bid prices are always rounded down and ask prices are always rounded u
 |      USDC:USDT    |        0.001 |
 |      FLEX:USDT    |        0.005 |
 |    DOTF:USDTDOT   |            2 |
+|    DFNF:USDTDFN   |          0.5 |
 |   XBTJAN:USDTJAN  |            1 |
 |   BCHJAN:USDTJAN  |         0.25 |
 |   ETHJAN:USDTJAN  |          0.1 |
