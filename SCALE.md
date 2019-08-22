@@ -172,7 +172,7 @@ Note that bid prices are always rounded down and ask prices are always rounded u
 |      USDC:USDT    |        0.001 |
 |      FLEX:USDT    |        0.005 |
 |    DOTF:USDTDOT   |            2 |
-|    DFNF:USDTDFN   |          0.5 |
+|    DFNF:USDTDFN   |         0.05 |
 |   XBTJAN:USDTJAN  |            1 |
 |   BCHJAN:USDTJAN  |         0.25 |
 |   ETHJAN:USDTJAN  |          0.1 |
