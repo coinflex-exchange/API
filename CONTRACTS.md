@@ -22,4 +22,4 @@ named month.
 |  SEP  | Mon, 29th Jul | Fri, 27th Sep |  U   |
 |  OCT  | Mon, 2nd Sep  | Fri, 25th Oct |  V   |
 |  NOV  | Mon, 30th Sep | Fri, 29th Nov |  X   |
-|  DEC  | Mon, 28th Oct | Fri, 29th Dec |  Z   |
+|  DEC  | Mon, 28th Oct | Fri, 27th Dec |  Z   |
