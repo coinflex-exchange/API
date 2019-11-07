@@ -2,7 +2,7 @@ API
 ===
 
 * DEMO site
-	* `wss://demoapi.coinflex.com/v1`
+	* `wss://stgapi.coinflex.com/v1`
 
 * LIVE site  
 	* `wss://api.coinflex.com/v1`
