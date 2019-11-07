@@ -53,12 +53,15 @@ The public market data methods do not require authentication.
 	{
 		"base": <integer>,
 		"counter": <integer>,
+		"name": <string>,
+		"spot_name": <string>
 		"last": <integer>|null,
 		"bid": <integer>|null,
 		"ask": <integer>|null,
 		"low": <integer>|null,
 		"high": <integer>|null,
-		"volume": <integer>
+		"volume": <integer>,
+		"time": <integer>
 	}
 
 * **`base`:** *(integer)* The numeric identifier of the base asset of the ticker.
@@ -122,7 +125,8 @@ Returns a complete list of CoinFLEX assets.
 	
 	{
 		"id": <integer>,
-		"spot": <integer>,
+		"spot_id": <integer>,
+		"spot_name": <string>,
 		"name": <string>,
 		"scale": <integer>
 	}
@@ -155,6 +159,8 @@ Returns a complete list of CoinFLEX SPOT and Futures markets.
 	{
 		"base": <integer>,
 		"counter": <integer>,
+		"name": <string>,
+		"spot_name": <string>,
 		"start": <integer>,
 		"expires": <integer>,
 		"tenor": <string>,
