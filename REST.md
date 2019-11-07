@@ -63,12 +63,16 @@ The public market data methods do not require authentication.
 
 * **`base`:** *(integer)* The numeric identifier of the base asset of the ticker.
 * **`counter`:** *(integer)* The numeric identifier of the counter asset of the ticker.
+* **`name`:** *(integer)* The string name of the market consisting of the base asset name and counter asset name.
+* **`spot_name`:** *(integer)* The string name of the underlying spot market for a futures market.
 * **`last`:** *(integer or `null`)* The [scaled][] price of the last trade in the identified market, or `null` if no trade has occurred in the identified market.
 * **`bid`:** *(integer or `null`)* The [scaled][] price of the highest-priced open bid order in the identified market, or `null` if no bid orders are open in the identified market.
 * **`ask`:** *(integer or `null`)* The [scaled][] price of the lowest-priced open ask order in the identified market, or `null` if no ask orders are open in the identified market.
 * **`low`:** *(integer or `null`)* The [scaled][] price of the lowest-priced trade in the identified market in the preceding 24-hour period, or `null` if no trade has occurred in the identified market in the preceding 24-hour period.
 * **`high`:** *(integer or `null`)* The [scaled][] price of the highest-priced trade in the identified market in the preceding 24-hour period, or `null` if no trade has occurred in the identified market in the preceding 24-hour period.
 * **`volume`:** *(integer)* The [scaled][] quantity of the base asset that has traded in the identified market in the preceding 24-hour period.
+* **`ask`:** *(integer or `null`)* The [scaled][] price of the lowest-priced open ask order in the identified market, or `null` if no ask orders are open in the identified market.
+* **`time`:** *(integer)* The micro-timestamp at which the last update has occurred.
 
 ### `<trade>`
 
@@ -106,8 +110,9 @@ Returns a complete list of CoinFLEX assets.
 	GET /assets/ HTTP/1.1
 
 * **`id`:** *(integer)* The numeric identifier of the asset.
-* **`spot`:** *(integer)* The numeric identifier of the underlying spot asset for a futures asset.  Only applicable for futures assets.
 * **`name`:** *(string)* The string name of the asset.
+* **`spot_id`:** *(integer)* The numeric identifier of the underlying spot asset for a futures asset.  Only applicable for futures assets.
+* **`spot_name`:** *(integer)* The string name of the the underlying spot asset for a futures asset.  Only applicable for futures assets.
 * **`scale`:** *(integer)* The scale factor for the asset, applicable to all asset quantities and totals transmitted via the CoinFLEX API.
 
 ### Response
@@ -135,6 +140,8 @@ Returns a complete list of CoinFLEX SPOT and Futures markets.
 
 * **`base`:** *(integer)* The numeric identifier attributed to the base asset of the market.
 * **`counter`:** *(integer)* The numeric identifier attributed to the counter asset of the market.
+* **`name`:** *(integer)* The string name of the market consisting of the base asset name and counter asset name.
+* **`spot_name`:** *(integer)* The string name of the underlying spot market for a futures market.
 * **`start`:** *(integer)* The UNIX epoch millisecond timestamp of the first trade date of the market.  Only applicable for futures markets.
 * **`expires`:** *(integer)* The UNIX epoch millisecond timestamp of the expiry date of the market.  Only applicable for futures markets.
 * **`tenor`:** *(string)* The tenor code of the market using industry standard codes.
