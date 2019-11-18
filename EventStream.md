@@ -1,7 +1,7 @@
 # Event Stream
 
-DEMO site
-* https://demowebapi.coinflex.com/event-stream
+DEMO/STAGE site
+* https://stgwebapi.coinflex.com/event-stream
 	* Version 1
 
 LIVE site
