@@ -1,6 +1,6 @@
 # REST API
 
-DEMO site
+DEMO/STAGE site
 * https://stgwebapi.coinflex.com/
 
 LIVE site
