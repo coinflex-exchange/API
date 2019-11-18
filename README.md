@@ -29,8 +29,8 @@ CoinFLEX has published [client libraries][] for several popular languages to aid
 The [WebSocket API][] is accessible via [WebSocket][] connection to the following URLs:
 
 ```text
-DEMO site
-wss://demoapi.coinflex.com/v1   (encrypted)
+DEMO/STAGE site
+wss://stgapi.coinflex.com/v1   (encrypted)
 
 LIVE site
 wss://api.coinflex.com/v1       (encrypted)
