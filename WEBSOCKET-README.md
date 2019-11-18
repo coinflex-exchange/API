@@ -1,7 +1,7 @@
 API
 ===
 
-* DEMO site
+* DEMO/STAGE site
 	* `wss://stgapi.coinflex.com/v1`
 
 * LIVE site  
