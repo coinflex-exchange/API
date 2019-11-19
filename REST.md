@@ -345,7 +345,7 @@ Returns the specified limit order of the user.
 
 ### Request
 
-	GET /order/<id> HTTP/1.1
+	GET /orders/<id> HTTP/1.1
 
 ### Response
 
