@@ -1,6 +1,6 @@
 # Futures API Specification
 
-DEMO site
+DEMO/STAGE site
 
 **API endpoint URL: `https://stgwebapi.coinflex.com/`**
 
