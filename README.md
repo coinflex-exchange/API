@@ -7,8 +7,9 @@ CoinFLEX provides several APIs:
 * our native [WebSocket API][]
 * a [RESTful API](REST.md)
 * an [Event Stream resource](EventStream.md)
+* a second futures [Event Stream resource](FUTURES.md#get-borrowerevents) for your collateral, leverage and margin
 
-Using these interfaces, it is possible to make both authenticated and unauthenticated API calls.
+Using these interfaces it is possible to make both authenticated and unauthenticated API calls, with the exception of the Futures Event Stream which is authenticated only.
 
 Access keys are available on the CoinFLEX logged-in dashboard page for verified users which, in conjunction with your account password, allow authenticated use these APIs.
 
