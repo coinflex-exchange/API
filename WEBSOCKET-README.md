@@ -320,7 +320,7 @@ Places an order to execute a specified trade. This command is used to place both
 
 `tag` is optional. Iff given and non-zero, it will be echoed in the reply.
 
-`tonce` is optional. If given, it must be non-zero, and it must be strictly greater than any tonce given in any successful `PlaceOrder` command previously issued by the authenticated user since the user last issued a `CancelAllOrders` command.
+`tonce` is optional. If given, it must be non-zero and unique to any tonce currently active with any live open orders.  
 The purpose of the tonce is to allow the user to resubmit a `PlaceOrder` command (e.g., after a connection failure) without risk of creating a duplicate order or to request cancellation of a just-placed order without needing to wait for the `PlaceOrder` reply containing the server-assigned order identifier.
 
 `base` and `counter` are the asset codes of the base and counter assets of the order.
