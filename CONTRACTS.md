@@ -9,17 +9,17 @@ before expiry).
 There will also be a ramp-up period that starts on Wednesday at midday (UTC) leading up to the final Friday of the
 named month.
 
-| Month | 2019 (start)  | 2019 (expiry) | code |
-|------:|--------------:|--------------:|-----:|
-|  JAN  | Mon, 26th Nov | Fri, 25th Jan |  F   |
-|  FEB  | Mon, 31st Dec | Fri, 22nd Feb |  G   |
-|  MAR  | Mon, 28th Jan | Fri, 29th Mar |  H   |
-|  APR  | Mon, 25th Feb | Fri, 26th Apr |  J   |
-|  MAY  | Mon, 1st Apr  | Fri, 31st May |  K   |
-|  JUN  | Mon, 29th Apr | Fri, 28th Jun |  M   |
-|  JUL  | Mon, 3rd Jun  | Fri, 26th Jul |  N   |
-|  AUG  | Mon, 1st Jul  | Fri, 30th Aug |  Q   |
-|  SEP  | Mon, 29th Jul | Fri, 27th Sep |  U   |
-|  OCT  | Mon, 2nd Sep  | Fri, 25th Oct |  V   |
-|  NOV  | Mon, 30th Sep | Fri, 29th Nov |  X   |
-|  DEC  | Mon, 28th Oct | Fri, 27th Dec |  Z   |
+| Month | 2020 (expiry) | code |
+|------:|--------------:|-----:|
+|  JAN  | Fri, 31st Jan |  F   |
+|  FEB  | Fri, 28th Feb |  G   |
+|  MAR  | Fri, 27th Mar |  H   |
+|  APR  | Fri, 24th Apr |  J   |
+|  MAY  | Fri, 29th May |  K   |
+|  JUN  | Fri, 26th Jun |  M   |
+|  JUL  | Fri, 31st Jul |  N   |
+|  AUG  | Fri, 28th Aug |  Q   |
+|  SEP  | Fri, 25th Sep |  U   |
+|  OCT  | Fri, 30th Oct |  V   |
+|  NOV  | Fri, 27th Nov |  X   |
+|  DEC  | Fri, 25th Dec |  Z   |
