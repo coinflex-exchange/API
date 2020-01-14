@@ -937,6 +937,7 @@ Two orders matched, resulting in a trade.
 		"base": <integer>,
 		"counter": <integer>,
 		"quantity": <integer>,
+		"taker":<boolean>,
 		"price": <integer>,
 		"total": <integer>,
 		"bid_rem": <integer>,
@@ -956,6 +957,8 @@ Two orders matched, resulting in a trade.
 `base` and `counter` are the asset codes of the base and counter assets of the orders.
 
 `quantity` is the [scaled][] amount of the base asset that was traded. It is always positive.
+
+`taker` is the indicator for order type. True for taker order. False for maker order. 
 
 `price` is the [scaled][] price at which the trade executed.
 
