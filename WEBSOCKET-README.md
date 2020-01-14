@@ -958,7 +958,7 @@ Two orders matched, resulting in a trade.
 
 `quantity` is the [scaled][] amount of the base asset that was traded. It is always positive.
 
-`taker` is the indicator for order type. True for taker order. False for maker order. 
+`taker` is the bolean identifier showing True for a taker trade or False for maker trade.  This field is currently only visibile for the private authenticated OrdersMatched message.  
 
 `price` is the [scaled][] price at which the trade executed.
 
