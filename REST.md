@@ -102,6 +102,40 @@ The public market data methods do not require authentication.
 * **`order_id`:** *(integer or `null`)* The numeric identifier of the user's limit order that participated in the trade, or `null` if the user caused the trade by a market order.
 
 ---
+​
+## `GET /account_value/`
+​
+**Authentication required.** 
+Returns the user's account value broken down by spot, futures and their value changes since the daily snapshot at 00:00UTC.
+​
+### Request
+​
+	GET /account_value/ HTTP/1.1
+​
+* **`asset`:** *(integer)* The numeric asset code of an asset in which the user's account value is reported.
+* **`spot_value`:** *(integer)* The total scaled amount held by the user in this spot asset.
+* **`change_in_spot_value`:** *(integer)* The scaled amount of the diff between the current spot_value and the snapshot spot_value.
+* **`futures_value`:** *(integer)* The total scaled amount held by the user in this futures asset.
+* **`change_in_futures_value`:** *(integer)* The scaled amount of the diff between the current futures_value and the snapshot futures_value.
+* **`total_value`:** *(integer)* The total scaled amount of the sum of spot and futures.
+* **`change_in_total_value`:** *(integer)* The scaled amount of the diff between the total_value and the snapshot total_value.
+​
+### Response
+​
+	HTTP/1.1 200 OK
+	Content-Type: application/json; charset=US-ASCII
+	
+	[{
+		"asset": <integer>,
+		"spot_value": <integer>,
+		"change_in_spot_value": <integer>,
+		"futures_value": <integer>,
+		"change_in_futures_value": <integer>,
+		"total_value": <integer>,
+		"change_in_total_value": <integer>
+	}, …]
+​
+---
 
 ## `GET /assets/`
 
