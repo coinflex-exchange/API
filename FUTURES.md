@@ -16,7 +16,7 @@ Currently, the Futures API supports the following endpoints:
 
 `/borrower/events`           	&#09; ([GET](#get-borrowerevents))  
 `/borrower/conversion/`     	&#09; ([GET](#get-borrowerconversion) | [POST](#post-borrowerconversion))  
-`/borrower/converted_totals/`	&#09; ([GET](#get-borrowerconverted_totals))  	
+`/borrower/converted_totals/`	&#09; ([GET](#get-borrowerconverted_totals))  
 `/borrower/collateral/`     	&#09; ([GET](#get-borrowercollateral))  
 `/borrower/collateral/<id>` 	&#09; ([GET](#get-borrowercollateralid))    
 `/borrower/offers/`         	&#09; ([GET](#get-borroweroffers))   
