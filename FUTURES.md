@@ -14,11 +14,11 @@ LIVE site
 
 Currently, the Futures API supports the following endpoints:
 
-`/borrower/events`          	&#09; ([GET](#get-borrowerevents))  
+`/borrower/events`           	&#09; ([GET](#get-borrowerevents))  
 `/borrower/conversion/`     	&#09; ([GET](#get-borrowerconversion) | [POST](#post-borrowerconversion))  
-`/borrower/converted_totals/`	&#09; ([GET](#get-borrowerconvertedtotals))  
-`/borrower/collateral/`     	&#09; ([GET](#get-borrowercollateral)) 
-`/borrower/collateral/<id>` 	&#09; ([GET](#get-borrowercollateralid))  
+`/borrower/converted_totals/`	&#09; ([GET](#get-borrowerconverted_totals))  	
+`/borrower/collateral/`     	&#09; ([GET](#get-borrowercollateral))  
+`/borrower/collateral/<id>` 	&#09; ([GET](#get-borrowercollateralid))    
 `/borrower/offers/`         	&#09; ([GET](#get-borroweroffers))   
 `/borrower/offers/<id>`     	&#09; ([GET](#get-borroweroffersid))   
 `/borrower/loans/`          	&#09; ([GET](#get-borrowerloans) | [POST](#post-borrowerloans))   
@@ -246,7 +246,7 @@ Returns the list of total converted quantities for each valid asset pair.
 		{
 			"asset_from": <integer>,
 			"asset_to": <integer>,
-			"total: <integer>
+			"total": <integer>
 		},
 		…
 	]
