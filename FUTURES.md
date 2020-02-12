@@ -1,6 +1,6 @@
 # Futures API Specification
 
-DEMO site
+DEMO/STAGE site
 
 **API endpoint URL: `https://stgwebapi.coinflex.com/`**
 
@@ -14,15 +14,16 @@ LIVE site
 
 Currently, the Futures API supports the following endpoints:
 
-`/borrower/collateral/`     &#09; ([GET](#get-borrowercollateral))   
-`/borrower/collateral/<id>` &#09; ([GET](#get-borrowercollateralid))   
-`/borrower/conversion/`     &#09; ([GET](#get-borrowerconversion) | [POST](#post-borrowerconversion))   
-`/borrower/events`          &#09; ([GET](#get-borrowerevents))   
-`/borrower/offers/`         &#09; ([GET](#get-borroweroffers))   
-`/borrower/offers/<id>`     &#09; ([GET](#get-borroweroffersid))   
-`/borrower/loans/`          &#09; ([GET](#get-borrowerloans) | [POST](#post-borrowerloans))   
-`/borrower/loans/<id>`      &#09; ([GET](#get-borrowerloansid) | [POST](#post-borrowerloansid) | [DELETE](#delete-borrowerloansid))   
-`/borrower/margin_ratios/`  &#09; ([GET](#get-borrowermargin_ratios)  
+`/borrower/events`          	&#09; ([GET](#get-borrowerevents))  
+`/borrower/conversion/`     	&#09; ([GET](#get-borrowerconversion) | [POST](#post-borrowerconversion))  
+`/borrower/converted_totals/`	&#09; ([GET](#get-borrowerconvertedtotals))  
+`/borrower/collateral/`     	&#09; ([GET](#get-borrowercollateral)) 
+`/borrower/collateral/<id>` 	&#09; ([GET](#get-borrowercollateralid))  
+`/borrower/offers/`         	&#09; ([GET](#get-borroweroffers))   
+`/borrower/offers/<id>`     	&#09; ([GET](#get-borroweroffersid))   
+`/borrower/loans/`          	&#09; ([GET](#get-borrowerloans) | [POST](#post-borrowerloans))   
+`/borrower/loans/<id>`      	&#09; ([GET](#get-borrowerloansid) | [POST](#post-borrowerloansid) | [DELETE](#delete-borrowerloansid))   
+`/borrower/margin_ratios/`  	&#09; ([GET](#get-borrowermargin_ratios)  
 
 
 ## Authentication
@@ -111,6 +112,53 @@ All method calls require [HTTP Basic authentication][]. The username portion of 
 
 ---
 
+## `GET /borrower/events`
+
+Returns a stream of events pertaining to the user's borrowing activity.
+The response body is an indefinitely long document in [`text/event-stream`][EventSource] format.
+
+Optionally, the Base64-encoded [HTTP Basic authentication][] string may be passed to this resource in an `auth` query string parameter rather than in the standard `Authorization` request header. This option is provided as a workaround for a deficiency in some [EventSource][] client implementations.
+
+[EventSource]: https://www.w3.org/TR/eventsource/
+
+### Request
+
+	GET /borrower/events HTTP/1.1
+
+### Response
+
+	HTTP/1.1 200 OK
+	Content-Type: text/event-stream; charset=UTF-8
+	
+	event: Collateral
+	data: [<collateral>, …]
+	
+	event: Offers
+	data: [<offer>, …]
+	
+	event: OfferOpened
+	data: <offer>
+	
+	event: OfferUpdated
+	data: <offer>
+	
+	event: OfferClosed
+	data: {"id": <integer>}
+	
+	event: Loans
+	data: [<loan>, …]
+	
+	event: LoanInitiated
+	data: <loan>
+	
+	event: LoanUpdated
+	data: <loan>
+	
+	event: LoanTerminated
+	data: {"id": <integer>}
+
+---
+
 ## `GET /borrower/conversion/`
 
 Returns the list of asset pairs available for conversion.
@@ -136,7 +184,6 @@ Returns the list of asset pairs available for conversion.
 * **`asset_to`:** *(integer)* The numeric code of the asset to convert to.
 
 ---
-
 ## `POST /borrower/conversion/`
 
 Initiates a loan.
@@ -182,51 +229,31 @@ The `Location` response header contains the numeric identifier of the newly init
 		<explanation>
 
 ---
+## `GET /borrower/converted_totals/`
 
-## `GET /borrower/events`
-
-Returns a stream of events pertaining to the user's borrowing activity.
-The response body is an indefinitely long document in [`text/event-stream`][EventSource] format.
-
-Optionally, the Base64-encoded [HTTP Basic authentication][] string may be passed to this resource in an `auth` query string parameter rather than in the standard `Authorization` request header. This option is provided as a workaround for a deficiency in some [EventSource][] client implementations.
-
-[EventSource]: https://www.w3.org/TR/eventsource/
+Returns the list of total converted quantities for each valid asset pair.
 
 ### Request
 
-	GET /borrower/events HTTP/1.1
+	GET /borrower/converted_totals/ HTTP/1.1
 
 ### Response
 
 	HTTP/1.1 200 OK
-	Content-Type: text/event-stream; charset=UTF-8
+	Content-Type: application/json; charset=US-ASCII
 	
-	event: Collateral
-	data: [<collateral>, …]
-	
-	event: Offers
-	data: [<offer>, …]
-	
-	event: OfferOpened
-	data: <offer>
-	
-	event: OfferUpdated
-	data: <offer>
-	
-	event: OfferClosed
-	data: {"id": <integer>}
-	
-	event: Loans
-	data: [<loan>, …]
-	
-	event: LoanInitiated
-	data: <loan>
-	
-	event: LoanUpdated
-	data: <loan>
-	
-	event: LoanTerminated
-	data: {"id": <integer>}
+	[
+		{
+			"asset_from": <integer>,
+			"asset_to": <integer>,
+			"total: <integer>
+		},
+		…
+	]
+
+* **`asset_from`:** *(integer)* The numeric code of the asset to convert from.
+* **`asset_to`:** *(integer)* The numeric code of the asset to convert to.
+* **`total`:** *(integer)* The total quantity of the asset which has been converted.
 
 ---
 
