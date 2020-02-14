@@ -361,7 +361,7 @@ The purpose of the tonce is to allow the user to resubmit a `PlaceOrder` command
 
 `persist` is optional. If **true** or omitted, the order will remain on the order book until canceled or fulfilled. If **false**, the order will be canceled automatically when the client disconnects. If `"fill_or_kill"`, the order will be canceled automatically after any immediate matches. This flag has no effect on market orders.
 
-`post_only` is optional. If **true** the limit order will never take liqudity from the order book and can only become a non-aggressing maker order.  If the limit price would result in an immediate match then the order will not be opened and hence rejected.   
+`post_only` is optional. If **true** the limit order will never take liquidity from the order book and can only become a non-aggressing maker order.  If the limit price would result in an immediate match then the order will not be opened and hence rejected.   
 
 `quantity` | `price`  | `total`
 -----------|----------|---------
