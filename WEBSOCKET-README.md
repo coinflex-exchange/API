@@ -341,7 +341,8 @@ Places an order to execute a specified trade. This command is used to place both
 		"quantity": <integer>,
 		"price": <integer>,
 		"total": <integer>,
-		"persist": <boolean>|"fill_or_kill"
+		"persist": <boolean>|"fill_or_kill",
+		"post_only": <boolean>
 	}
 ```
 
@@ -359,6 +360,8 @@ The purpose of the tonce is to allow the user to resubmit a `PlaceOrder` command
 `total` is the [scaled][] amount of the counter asset that is to be traded. It is negative for a sell order and positive for a buy order. This field must be omitted if `price` is supplied and must be supplied if `quantity` is omitted.
 
 `persist` is optional. If **true** or omitted, the order will remain on the order book until canceled or fulfilled. If **false**, the order will be canceled automatically when the client disconnects. If `"fill_or_kill"`, the order will be canceled automatically after any immediate matches. This flag has no effect on market orders.
+
+`post_only` is optional. If **true** the limit order will never take liqudity from the order book and can only become a non-aggressing maker order.  If the limit price would result in an immediate match then the order will not be opened and hence rejected.   
 
 `quantity` | `price`  | `total`
 -----------|----------|---------
@@ -412,6 +415,7 @@ omitted    | omitted  | supplied
 8            | "Order total would overflow."
 8            | "You must specify either quantity or total for a market order."
 8            | *(varies)*
+9	     | "Post-only order with these parameters would result in an immediate match."
 
 ---
 
