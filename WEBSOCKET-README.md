@@ -1,4 +1,4 @@
-API
+WebSocket API Specification
 ===
 
 * DEMO/STAGE site
@@ -30,6 +30,33 @@ The WebSocket connection can be seen as logically carrying two independent commu
 The control channel carries a series of command/reply pairs, where each command specifies a `method` and each reply specifies an `error_code`. Commands always flow from client to server, and replies always flow from server to client. A client may pipeline commands - that is, the client need not wait to receive the reply for one command before transmitting another command. However, because the server may reorder replies to the client with respect to the order in which the client submitted the commands that elicited those replies, a pipelining client should specify a unique `tag` in each command, to which it should correlate the matching `tag` in the corresponding reply. The server executes all commands that alter the state of the system in the order in which it receives them, but it may reply to information requests ahead of commands that alter state. For example, pipelining an `EstimateMarketOrder` command after a `PlaceOrder` command may mean that the returned estimate does not reflect any order book changes that result from the placed order.
 
 The asynchronous notifications channel carries a series of notices, where each notice specifies a `notice` field. These notices may be delivered to the client at any time, and the timing of their delivery may not tightly correlate with command/reply messages in the control channel. For example, the `OrderOpened` notice that results from a `PlaceOrder` command may be delivered either before or after the command reply. However, notices are guaranteed to be delivered to the client in the same order as their respective events occurred in the trade engine. For example, an `OrdersMatched` notice that references a particular order will never be delivered _after_ an `OrderClosed` notice that references the same order.
+
+---
+
+## Contents
+
+Currently, the WebSocket API supports the following:-
+* Commands:
+	* [Authenticate](#authenticate)  
+	* [GetBalances](#getbalances)  
+	* [GetOrders](#getorders)  
+	* [EstimateMarketOrder](#estimatemarketorder)
+	* [PlaceOrder](#placeorder) 
+	* [ModifyOrder](#modifyorder) 
+	* [CancelOrder](#cancelorder) 
+	* [CancelAllOrders](#cancelallorders)
+	* [GetTradeVolume](#gettradevolume)
+	* [WatchOrders](#watchorders)
+	* [WatchTicker](#watchticker)
+	
+* Notifications:
+	* [BalanceChanged](#balancechanged)
+	* [OrderOpened](#orderopened)  
+	* [OrderModified](#ordermodified)  
+	* [OrdersMatched](#ordersmatched)
+	* [OrderClosed](#orderclosed)  
+	* [TickerChanged](#tickerchanged)
+	* [TradeVolumeChanged](#tradevolumechanged)  
 
 ---
 
@@ -447,7 +474,7 @@ If the order quantity is enlarged, then the order is moved to the end of the que
 
 `price` is the new [scaled][] price at which the modified order offers to trade.
 
-`time` is the micro-timestamp at which the order was opened.
+`time` is the micro-timestamp at which the order was modified.
 
 ### Error Reply
 
@@ -915,7 +942,7 @@ An order has been modified.
 
 `price` is the new [scaled][] price at which the order offers to trade.
 
-`time` is the micro-timestamp at which the order was opened.
+`time` is the micro-timestamp at which the order was modified.
 
 ---
 
