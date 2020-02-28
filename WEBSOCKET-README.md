@@ -1021,6 +1021,7 @@ An order was removed from the order book.
 		"counter": <integer>,
 		"quantity": <integer>,
 		"price": <integer>
+		"time_closed": <integer>
 	}
 ```
 
@@ -1033,6 +1034,8 @@ An order was removed from the order book.
 `quantity` is the [scaled][] amount of the base asset that was remaining to be traded when the order was closed. It is negative for a sell order and positive for a buy order. It is zero if the order was completely fulfilled.
 
 `price` is the [scaled][] price at which the order had offered to trade.
+
+`time_closed` is the micro-timestamp at which the order closed.
 
 ---
 
