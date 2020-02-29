@@ -186,7 +186,7 @@ Returns the list of asset pairs available for conversion.
 ---
 ## `POST /borrower/conversion/`
 
-Initiates a loan.
+Initiates a conversion of assets.
 
 ### Request
 
