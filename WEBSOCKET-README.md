@@ -512,6 +512,7 @@ Modifies an open limit order. Only the quantity and price may be modified.
 8            | "Quantity delta must not be zero."
 8            | "Price must not be zero."
 8            | *(varies)*
+9	     | "Post-only order with these parameters would result in an immediate match."
 
 ---
 
