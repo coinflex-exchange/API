@@ -151,7 +151,9 @@ Retrieves the available balances of the authenticated user.
 		"balances": [
 			{
 				"asset": <integer>,
-				"balance": <integer>
+				"balance": <integer>,
+				"reserved_balance": <integer>,
+				"total_balance": <integer>
 			},
 			…
 		]
@@ -163,6 +165,10 @@ Retrieves the available balances of the authenticated user.
 `asset` is an asset code for which a balance is given.
 
 `balance` is the user's [scaled][] available balance in the specified asset.
+
+`reserved_balance` is the user's [scaled][] reserved balance in the specified asset.
+
+`total_balance` is the user's [scaled][] total balance in the specified asset.
 
 ### Error Reply
 
