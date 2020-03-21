@@ -435,7 +435,7 @@ Modifies an open limit order. Only the quantity and price may be modified.
 		"id": <integer>,
 		"tonce": <integer>,
 		"quantity_delta": <integer>,
-		"price": <integer>
+		"price": <integer>,
 		"post_only": <boolean>
 	}
 ```
