@@ -977,7 +977,8 @@ Two orders matched, resulting in a trade.
 		"base": <integer>,
 		"counter": <integer>,
 		"quantity": <integer>,
-		"taker":<boolean>,
+		"taker_side": <string>,
+		"taker": <boolean>,
 		"price": <integer>,
 		"total": <integer>,
 		"bid_rem": <integer>,
@@ -998,7 +999,9 @@ Two orders matched, resulting in a trade.
 
 `quantity` is the [scaled][] amount of the base asset that was traded. It is always positive.
 
-`taker` is the bolean identifier showing True for a taker trade or False for maker trade.  This field is currently only visibile for the private authenticated OrdersMatched message.  
+`taker_side` is the string identifier showing **bid** or **ask** to indentify which side of the matched trade was the taker/aggressor. 
+
+`taker` is the boolean identifier showing True for a taker trade or False for maker trade.  This field is currently only visibile for the private authenticated OrdersMatched message.  
 
 `price` is the [scaled][] price at which the trade executed.
 
