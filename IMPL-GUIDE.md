@@ -35,7 +35,7 @@ Implementers may wish to maintain a local view of an order book. This can be eff
         * When you receive the reply to your `WatchOrders` command, build your initial view of the order book from the array given in the `orders` field of the reply message, noting that bids are represented with positive quantities and asks with negative quantities. Then apply to this initial view any early update notices that you may have received by following the rules for applying update notices, given below.
         * Note that the snapshot sent by the server contains at most the top 1000 bids and the top 1000 asks from the live order book at the time when the snapshot was taken.
 * When you receive an `OrderOpened` notice, add the described order to your view, which will not have contained any order with the given ID prior to the addition.
-* When you receive an `OrderModified` notice, modify the described order in your view. Note that the quantity and the price of the described order could be changed. However, the described order cannot cross the bid/ask.
+* When you receive an `OrderModified` notice, modify the described order in your view. Note that the quantity and/or the price of the described order could have been updated. The described order cannot cross the bid/ask.
 * When you receive an `OrderClosed` notice, delete the identified order from your view.
         * If your view did not contain the identified order, then simply ignore the notice, as it pertains to an order that was open at the time of your initial snapshot of the live order book but was not among the top 1000 bids and top 1000 asks at that time.
 * When you receive an `OrdersMatched` notice:
