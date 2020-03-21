@@ -446,12 +446,11 @@ Modifies an open limit order. Only the quantity and price may be modified.
 
 `tonce` is the tonce given in the `PlaceOrder` command that opened the order to be modified. This field must be supplied if `id` is omitted.
 
-`quantity_delta` is the [scaled][] amount by which to adjust the quantity of the open order. It is negative to increase the quantity of a sell order or to decrease the quantity of a buy order. It is positive to increase the quantity of a buy order or to decrease the quantity of a sell order. It is optional; if omitted, the order's quantity will not be adjusted.
-`post_only` is optional. If **true** the modified limit order will never take liquidity from the order book and can only become a non-aggressing maker order. If the limit price would result in an immediate match then the order will not be modified and the order remains unchanged.
-If the requested adjustment would cause the order's quantity to reach or cross zero, then this command has the effect of canceling the order.
-If the order quantity is enlarged, then the order is moved to the end of the queue at its price level in the order book; otherwise, the order remains at its present position in the queue.
+`quantity_delta` is the [scaled][] amount by which to adjust the quantity of the open order. It is negative to increase the quantity of a sell order or to decrease the quantity of a buy order. It is positive to increase the quantity of a buy order or to decrease the quantity of a sell order. It is optional; if omitted, the order's quantity will not be adjusted. If the requested adjustment would cause the order's quantity to reach or cross zero, then this command has the effect of canceling the order. If the order quantity is enlarged, then the order is moved to the end of the queue at its price level in the order book; otherwise, the order remains at its present position in the queue.
 
 `price` is the new [scaled][] price at which the order offers to trade. It is optional; if omitted, the order's price will not be modified.
+
+`post_only` is optional. If **true** the modified limit order will never take liquidity from the order book and can only become a non-aggressing maker order. If the limit price would result in an immediate match then the order will not be modified and the order remains unchanged.
 
 ### Success Reply
 
