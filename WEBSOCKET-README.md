@@ -1021,7 +1021,7 @@ An order was removed from the order book.
 		"base": <integer>,
 		"counter": <integer>,
 		"quantity": <integer>,
-		"price": <integer>
+		"price": <integer>,
 		"time_closed": <integer>
 	}
 ```
@@ -1036,7 +1036,7 @@ An order was removed from the order book.
 
 `price` is the [scaled][] price at which the order had offered to trade.
 
-`time_closed` is the micro-timestamp at which the order closed.
+`time_closed` is the microsecond timestamp of when the order was closed.
 
 ---
 
