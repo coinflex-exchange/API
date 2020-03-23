@@ -144,13 +144,9 @@ Returns a complete list of CoinFLEX assets.
 
 ### Request
 
-	GET /assets/ HTTP/1.1
+	GET /assets/[?activeOnly=<boolean>] HTTP/1.1
 
-* **`id`:** *(integer)* The numeric identifier of the asset.
-* **`name`:** *(string)* The string name of the asset.
-* **`spot_id`:** *(integer)* The numeric identifier of the underlying spot asset for a futures asset.  Only applicable for futures assets.
-* **`spot_name`:** *(string)* The string name of the the underlying spot asset for a futures asset.  Only applicable for futures assets.
-* **`scale`:** *(integer)* The scale factor for the asset, applicable to all asset quantities and totals transmitted via the CoinFLEX API.
+* **`activeOnly`:** *(boolean, optional)* If **true** or omitted this will only return the list of active assets.  If **false**, this will return the entire list of exchange assets, both expired and active assets. 
 
 ### Response
 
@@ -164,6 +160,12 @@ Returns a complete list of CoinFLEX assets.
 		"name": <string>,
 		"scale": <integer>
 	}
+
+* **`id`:** *(integer)* The numeric identifier of the asset.
+* **`name`:** *(string)* The string name of the asset.
+* **`spot_id`:** *(integer)* The numeric identifier of the underlying spot asset for a futures asset.  Only applicable for futures assets.
+* **`spot_name`:** *(string)* The string name of the the underlying spot asset for a futures asset.  Only applicable for futures assets.
+* **`scale`:** *(integer)* The scale factor for the asset, applicable to all asset quantities and totals transmitted via the CoinFLEX API.
 
 ---
 
