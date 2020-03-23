@@ -79,6 +79,11 @@ Asset quantities and totals transmitted via the CoinFLEX API are encoded as inte
 |   ETHDEC   |   0xC833 |    51251 |        10000 |  DecΞ 0.0001 |
 |   USDTDEC  |   0xCAB3 |    51891 |        10000 | Dec$T 0.0001 |
 |   USDCDEC  |   0xCA9F |    51871 |        10000 | Dec$C 0.0001 |
+|   XBTJUN20 |   0x2715 |    10005 |        10000 |  JunɃ20 0.0001 |
+|   BCHJUN20 |   0x2721 |    10017 |        10000 | JunɃC20 0.0001 |
+|   ETHJUN20 |   0x272D |    10029 |        10000 | JunΞ20 0.0001 |
+|  USDTJUN20 |   0x2739 |    10041 |        10000 | Jun$T20 0.0001 |
+|  USDCJUN20 |   0x2745 |    10053 |        10000 | Jun$C20 0.0001 |
 
 ### Examples
 
@@ -152,6 +157,10 @@ Prices transmitted via the CoinFLEX API are encoded as integers with an implicit
 |   BCHDEC:USDTDEC  |        10000 |
 |   ETHDEC:USDTDEC  |        10000 |
 |  USDCDEC:USDTDEC  |        10000 |
+|  XBTJUN20:USDTJUN20   |        10000 |
+|   BCHJUN20:USDTJUN20  |        10000 |
+|   ETHJUN20:USDTJUN20  |        10000 |
+|  USDCJUN20:USDTJUN20  |        10000 |
 
 ### Examples
 
