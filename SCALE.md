@@ -161,6 +161,7 @@ Prices transmitted via the CoinFLEX API are encoded as integers with an implicit
 |   BCHJUN20:USDTJUN20  |        10000 |
 |   ETHJUN20:USDTJUN20  |        10000 |
 |  USDCJUN20:USDTJUN20  |        10000 |
+
 ### Examples
 
 | Logical Price | Integer Encoding |
