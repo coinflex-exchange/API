@@ -234,6 +234,10 @@ Note that bid prices are always rounded down and ask prices are always rounded u
 |   BCHDEC:USDTDEC  |         0.25 |
 |   ETHDEC:USDTDEC  |          0.1 |
 |  USDCDEC:USDTDEC  |        0.001 |
+|  XBTJUN20:USDTJUN20   |          0.5 |
+|   BCHJUN20:USDTJUN20  |         0.25 |
+|   ETHJUN20:USDTJUN20  |          0.1 |
+|  USDCJUN20:USDTJUN20  |        0.0001 |
 
 ### Examples
 
