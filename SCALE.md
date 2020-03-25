@@ -82,8 +82,9 @@ Asset quantities and totals transmitted via the CoinFLEX API are encoded as inte
 |   XBTJUN20 |   0x2715 |    10005 |        10000 |  JunɃ20 0.0001 |
 |   BCHJUN20 |   0x2721 |    10017 |        10000 | JunɃC20 0.0001 |
 |   ETHJUN20 |   0x272D |    10029 |        10000 | JunΞ20 0.0001 |
-|  USDTJUN20 |   0x2739 |    10041 |        10000 | Jun$T20 0.0001 |
-|  USDCJUN20 |   0x2745 |    10053 |        10000 | Jun$C20 0.0001 |
+|  USDTJUN20 |   0x2745 |    10053 |        10000 | Jun$T20 0.0001 |
+|  USDCJUN20 |   0x2739 |    10041 |        10000 | Jun$C20 0.0001 |
+
 
 ### Examples
 
