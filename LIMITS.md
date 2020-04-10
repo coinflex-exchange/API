@@ -9,6 +9,7 @@ CoinFLEX's application programming interface (API) allows our clients to access 
 | Order placements*       |          200 per second per user |
 | Information requests†   |    10 per 10 seconds per session |
 | Records requests‡       |         30 per 1 minute per user |
+| Conversion requests     |         1 per 5 seconds per user |
 
 \* "Order placements" also include order cancellations and market order estimates. This is for websockets. Via REST, the limit is 300 per 10 second window.
 
